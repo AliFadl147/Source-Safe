@@ -20,7 +20,8 @@ class CustomTextFieldWidget extends StatelessWidget {
         controller: textFieldModel.controller,
         keyboardType: textFieldModel.keyboardType,
         style: AppStyles.styleMedium18(context),
-        cursorColor: AppColors.black,
+        cursorColor: AppColors.kPrimaryColor,
+        cursorErrorColor: AppColors.kPrimaryColor,
         obscureText: textFieldModel.obscureText,
         decoration: customInputDecoration(context),
         initialValue: textFieldModel.initial,
@@ -36,14 +37,16 @@ class CustomTextFieldWidget extends StatelessWidget {
       filled: true,
       fillColor: textFieldModel.fillColor ?? AppColors.guyabano,
       labelText: textFieldModel.label,
-      labelStyle: AppStyles.styleMedium20(context),
+      labelStyle: AppStyles.styleMedium18(context).copyWith(
+        color: AppColors.gray74
+      ),
       errorText: textFieldModel.error,
       errorMaxLines: 3,
       errorStyle: AppStyles.styleRegular16(context),
       prefixIcon: CustomIcon(
         image: textFieldModel.prefixIcon,
         color: AppColors.sonicSilver,
-        padding: 12.0,
+        padding: 12.0, width: null,
       ),
       suffixIcon: textFieldModel.suffixIcon != null
           ? GestureDetector(
@@ -51,7 +54,7 @@ class CustomTextFieldWidget extends StatelessWidget {
               child: CustomIcon(
                 image: textFieldModel.suffixIcon!,
                 color: AppColors.sonicSilver,
-                padding: 12.0,
+                padding: 12.0, width: null,
               ))
           : null,
       enabledBorder: customOutlineInputBorder(),

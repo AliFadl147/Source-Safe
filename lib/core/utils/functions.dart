@@ -42,12 +42,10 @@ bool isLowerCasePasswordValid(String pass) {
 double getMaxWidth(BuildContext context) {
   double maxWidth = 0;
   SizeConfig.init(context);
-  if (SizeConfig.width >= 600 && SizeConfig.width <= 1000) {
+  if (SizeConfig.width < 800) {
+    maxWidth = 350;
+  } else if (SizeConfig.width >= 800) {
     maxWidth = 400;
-  } else if (SizeConfig.width > 1000) {
-    maxWidth = 600;
-  } else {
-    maxWidth = double.infinity;
   }
   return maxWidth;
 }

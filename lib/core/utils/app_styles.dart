@@ -15,7 +15,7 @@ abstract class AppStyles {
 
   static TextStyle styleRegular16(context) {
     return TextStyle(
-      color: AppColors.kPrimaryColor,
+      color: AppColors.red,
       fontSize: getResponsiveFontSize(context, fontSize: 16),
       fontFamily: FontConstants.fontFamily,
       fontWeight: FontWeight.w400,
@@ -31,14 +31,14 @@ abstract class AppStyles {
   //   );
   // }
 
-  static TextStyle styleMedium20(BuildContext context) {
-    return TextStyle(
-      color: AppColors.gray74,
-      fontSize: getResponsiveFontSize(context, fontSize: 20),
-      fontFamily: FontConstants.fontFamily,
-      fontWeight: FontWeight.w500,
-    );
-  }
+  // static TextStyle styleMedium20(BuildContext context) {
+  //   return TextStyle(
+  //     color: AppColors.gray74,
+  //     fontSize: getResponsiveFontSize(context, fontSize: 20),
+  //     fontFamily: FontConstants.fontFamily,
+  //     fontWeight: FontWeight.w500,
+  //   );
+  // }
 
   static TextStyle styleMedium18(BuildContext context) {
     return TextStyle(
@@ -87,7 +87,7 @@ abstract class AppStyles {
 
   static TextStyle styleBold29(BuildContext context) {
     return TextStyle(
-      color: const Color(0xFF000000),
+      color: AppColors.black,
       fontSize: getResponsiveFontSize(context, fontSize: 29),
       fontFamily: FontConstants.fontFamily,
       fontWeight: FontWeight.w700,

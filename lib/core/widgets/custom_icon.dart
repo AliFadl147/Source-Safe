@@ -9,6 +9,7 @@ class CustomIcon extends StatelessWidget {
     required this.padding,
     this.isColor = true,
     this.fit,
+    required this.width,
   });
 
   final String image;
@@ -16,6 +17,7 @@ class CustomIcon extends StatelessWidget {
   final double padding;
   final bool? isColor;
   final BoxFit? fit;
+  final double? width;
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +25,7 @@ class CustomIcon extends StatelessWidget {
       padding: EdgeInsets.all(padding),
       child: SvgPicture.asset(
         image,
+        width: width,
         colorFilter:
             isColor == true ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         fit: fit ?? BoxFit.contain,

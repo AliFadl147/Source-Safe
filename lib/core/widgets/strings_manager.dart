@@ -25,7 +25,7 @@ class AppStrings {
   static const String emailError = "your email is empty or not valid";
   static const String passwordError =
       "Your Password must not be empty or Less than 6 characters or there are no lowercase and uppercase letters or symbols";
-  static const String joinLoyalifyToday = 'Join Loyalify Today';
+  static const String createYourAccountToday = 'Get Started with Us – Create Your Account Today!';
   static const String unlockRewardsStartEarningNow =
       'Unlock Rewards, Start Earning Now!';
   static const String firstName = 'First name';

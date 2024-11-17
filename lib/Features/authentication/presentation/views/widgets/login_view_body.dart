@@ -1,17 +1,16 @@
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:source_safe_project/Features/authentication/presentation/manager/auth_cubit/auth_cubit.dart';
 import 'package:source_safe_project/Features/authentication/presentation/manager/auth_validation_cubit/auth_validation_cubit.dart';
-import 'package:source_safe_project/Features/authentication/presentation/views/widgets/login_fields_and_buttons.dart';
+import 'package:source_safe_project/Features/authentication/presentation/views/widgets/circular_clipper.dart';
+import 'package:source_safe_project/Features/authentication/presentation/views/widgets/custom_card.dart';
+import 'package:source_safe_project/Features/authentication/presentation/views/widgets/login_desktop_layout.dart';
+import 'package:source_safe_project/Features/authentication/presentation/views/widgets/picture_and_fields_section.dart';
 import 'package:source_safe_project/core/utils/app_colors.dart';
-import 'package:source_safe_project/core/utils/app_images.dart';
 import 'package:source_safe_project/core/utils/app_prefs.dart';
 import 'package:source_safe_project/core/utils/functions.dart';
 import 'package:source_safe_project/core/utils/service_locator.dart';
-import 'package:source_safe_project/core/widgets/custom_svg_picture.dart';
-
 
 class LoginViewBody extends StatelessWidget {
   LoginViewBody({super.key});
@@ -59,35 +58,42 @@ class LoginViewBody extends StatelessWidget {
         }
       },
       builder: (context, state) {
-        return ModalProgressHUD(
-          inAsyncCall: AuthCubit.get(context).isLoading,
-          color: AppColors.darkGainsboro,
-          progressIndicator: CircularProgressIndicator(
+        return Stack(children: [
+          Container(
+            width: double.infinity,
+            height: double.infinity,
             color: AppColors.kPrimaryColor,
           ),
-          child: Center(
-            child: SingleChildScrollView(
-              child: Form(
-                key: _formKey,
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                    left: 32,
-                    right: 32,
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      CustomSvgPicture(
-                          image: Assets.imagesLogin,
-                          maxWidth: getMaxWidth(context)),
-                      const LoginFieldsAndButtons(),
-                    ],
-                  ),
-                ),
-              ),
+          ClipPath(
+            clipper: CircularClipper(),
+            child: Container(
+              width: double.infinity,
+              height: double.infinity,
+              color: AppColors.pastelBlue, // Separator color
             ),
           ),
-        );
+          CustomCard(
+            formKey: _formKey,
+            child: LayoutBuilder(builder: (context, constrains) {
+              if (constrains.maxWidth < 700) {
+                return Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 56
+                  ),
+                  child: PictureAndFieldsSection(),
+                );
+              } else {
+                return Padding(
+                  padding: const EdgeInsets.only(
+                    left: 56,
+                    right: 100
+                  ),
+                  child: LoginDesktopLayout(),
+                );
+              }
+            }),
+          )
+        ]);
       },
     );
   }

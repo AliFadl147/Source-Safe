@@ -2,17 +2,14 @@ import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:source_safe_project/Features/authentication/presentation/manager/auth_cubit/auth_cubit.dart';
 import 'package:source_safe_project/Features/authentication/presentation/manager/auth_validation_cubit/auth_validation_cubit.dart';
-import 'package:source_safe_project/Features/authentication/presentation/views/widgets/address_and_phone_number_fields_section.dart';
-import 'package:source_safe_project/Features/authentication/presentation/views/widgets/buttons_section.dart';
-import 'package:source_safe_project/Features/authentication/presentation/views/widgets/email_and_password_fields_section.dart';
-import 'package:source_safe_project/Features/authentication/presentation/views/widgets/first_name_and_last_name_fields_section.dart';
-import 'package:source_safe_project/Features/authentication/presentation/views/widgets/title_and_subtitle_section.dart';
+import 'package:source_safe_project/Features/authentication/presentation/views/widgets/circular_clipper.dart';
+import 'package:source_safe_project/Features/authentication/presentation/views/widgets/custom_card.dart';
+import 'package:source_safe_project/Features/authentication/presentation/views/widgets/register_desktop_layout.dart';
+import 'package:source_safe_project/Features/authentication/presentation/views/widgets/title_and_fields_section_in_register.dart';
 import 'package:source_safe_project/core/utils/app_colors.dart';
 import 'package:source_safe_project/core/utils/functions.dart';
-import 'package:source_safe_project/core/widgets/strings_manager.dart';
 
 class RegisterViewBody extends StatelessWidget {
   RegisterViewBody({super.key});
@@ -26,7 +23,7 @@ class RegisterViewBody extends StatelessWidget {
         final SnackBar snackBar;
         if (state is AuthSuccessState) {
           snackBar = customSnackBar(
-              title: 'Will Done!',
+              title: 'Well Done!',
               message: 'Account Successfully Created',
               contentType: ContentType.success,
               color: AppColors.successGren);
@@ -34,7 +31,7 @@ class RegisterViewBody extends StatelessWidget {
           GoRouter.of(context).go('/');
         } else if (state is AuthFailureState) {
           snackBar = customSnackBar(
-            title: 'On Snap',
+            title: 'Oh Snap!',
             message: state.message,
             contentType: ContentType.failure,
           );
@@ -43,69 +40,43 @@ class RegisterViewBody extends StatelessWidget {
         }
       },
       builder: (context, state) {
-        return ModalProgressHUD(
-          inAsyncCall: AuthCubit.get(context).isLoading,
-          color: AppColors.white,
-          progressIndicator: CircularProgressIndicator(
-            color: AppColors.kPrimaryColor,
-          ),
-          child: Center(
-            child: SingleChildScrollView(
-              child: Form(
-                key: _formKey,
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                    left: 32,
-                    right: 32,
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const TitleAndSubTitleSection(),
-                      SizedBox(
-                          height: MediaQuery.of(context).size.height /
-                              33),
-                      const FirstnameAndLastnameFieldsSection(),
-                      SizedBox(
-                          height: MediaQuery.of(context).size.height /
-                              33),
-                      EmailAndpasswordfieldssection(
-                        onChangedEmail: (value) =>
-                            AuthValidationCubit.get(context)
-                                .setRegisterEmail(value),
-                        onChangedPassword: (value) =>
-                            AuthValidationCubit.get(context)
-                                .setRegisterPassword(value),
-                      ),
-                      SizedBox(
-                          height: MediaQuery.of(context).size.height /
-                              33),
-                      const AddressAndPhonenumberFieldsSection(),
-                      SizedBox(
-                          height: MediaQuery.of(context).size.height /
-                              12),
-                      BlocBuilder<AuthValidationCubit, AuthValidationState>(
-                        builder: (context, state) {
-                          return ButtonsSection(
-                            buttonText: AppStrings.register,
-                            bottomCenterText: AppStrings.alreadyHaveAnAccount,
-                            onPressed: (state is AllDataRegisterIsValid)
-                                ? () {
-                                    AuthCubit.get(context).register(context);
-                                  }
-                                : null,
-                            textButtonOnPressed: () {
-                              GoRouter.of(context).go('/');
-                            },
-                          );
-                        },
-                      ),
-                    ],
-                  ),
-                ),
+        return Stack(
+          children: [
+            Container(
+              width: double.infinity,
+              height: double.infinity,
+              color: AppColors.kPrimaryColor
+            ),
+            ClipPath(
+              clipper: CircularClipper(),
+              child: Container(
+                width: double.infinity,
+                height: double.infinity,
+                color: AppColors.pastelBlue // Separator color
               ),
             ),
-          ),
+            CustomCard(
+              formKey: _formKey,
+              child: LayoutBuilder(builder: (context, constraints) {
+                if (constraints.maxWidth < 700) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 56
+                    ),
+                    child: TitleAndFieldsSectionInRegister(),
+                  );
+                } else {
+                  return Padding(
+                    padding: const EdgeInsets.only(
+                      left: 100,
+                      right: 100
+                    ),
+                    child: RegisterDesktopLayout(),
+                  );
+                }
+              }),
+            )
+          ],
         );
       },
     );
