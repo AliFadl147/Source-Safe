@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -8,7 +9,7 @@ import 'package:source_safe_project/Features/authentication/presentation/views/w
 import 'package:source_safe_project/Features/authentication/presentation/views/widgets/email_and_password_fields_section.dart';
 import 'package:source_safe_project/Features/authentication/presentation/views/widgets/first_name_and_last_name_fields_section.dart';
 import 'package:source_safe_project/Features/authentication/presentation/views/widgets/title_section.dart';
-import 'package:source_safe_project/core/widgets/strings_manager.dart';
+import 'package:source_safe_project/core/utils/app_strings.dart';
 
 class TitleAndFieldsSectionInRegister extends StatelessWidget {
   const TitleAndFieldsSectionInRegister({
@@ -21,8 +22,8 @@ class TitleAndFieldsSectionInRegister extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const TitleSection(
-            text: AppStrings.createYourAccountToday,
+          TitleSection(
+            text: AppStrings.createYourAccountToday.tr(),
           ),
           SizedBox(height: MediaQuery.of(context).size.height / 33),
           const FirstnameAndLastnameFieldsSection(),
@@ -39,8 +40,8 @@ class TitleAndFieldsSectionInRegister extends StatelessWidget {
           BlocBuilder<AuthValidationCubit, AuthValidationState>(
             builder: (context, state) {
               return ButtonsSection(
-                buttonText: AppStrings.register,
-                bottomCenterText: AppStrings.alreadyHaveAnAccount,
+                buttonText: AppStrings.register.tr(),
+                bottomCenterText: AppStrings.alreadyHaveAnAccount.tr(),
                 onPressed: (state is AllDataRegisterIsValid)
                     ? () {
                         AuthCubit.get(context).register(context);
