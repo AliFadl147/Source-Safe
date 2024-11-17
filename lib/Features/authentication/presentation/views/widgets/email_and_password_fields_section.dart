@@ -1,11 +1,12 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:source_safe_project/Features/authentication/data/models/text_field_model.dart';
 import 'package:source_safe_project/Features/authentication/presentation/manager/auth_validation_cubit/auth_validation_cubit.dart';
 import 'package:source_safe_project/core/manager/eye_visibility_cubit/eye_visibility_cubit.dart';
 import 'package:source_safe_project/core/utils/app_images.dart';
+import 'package:source_safe_project/core/utils/app_strings.dart';
 import 'package:source_safe_project/core/widgets/custom_text_field_widget.dart';
-import 'package:source_safe_project/core/widgets/strings_manager.dart';
 
 class EmailAndpasswordfieldssection extends StatefulWidget {
   const EmailAndpasswordfieldssection(
@@ -59,9 +60,9 @@ class _EmailAndpasswordfieldssectionState
             CustomTextFieldWidget(
               textFieldModel: TextFieldModel(
                 controller: _emailController,
-                label: AppStrings.email,
+                label: AppStrings.email.tr(),
                 onChanged: widget.onChangedEmail,
-                error: (isEmailValid) ? null : AppStrings.emailError,
+                error: (isEmailValid) ? null : AppStrings.emailError.tr(),
                 prefixIcon: Assets.imagesEmailOutlined,
               ),
             ),
@@ -73,9 +74,9 @@ class _EmailAndpasswordfieldssectionState
                   textFieldModel: TextFieldModel(
                     controller: _passwordController,
                     keyboardType: TextInputType.visiblePassword,
-                    label: AppStrings.password,
+                    label: AppStrings.password.tr(),
                     onChanged: widget.onChangedPassword,
-                    error: (isPasswordValid) ? null : AppStrings.passwordError,
+                    error: (isPasswordValid) ? null : AppStrings.passwordError.tr(),
                     prefixIcon: Assets.imagesLockOutlined,
                     obscureText: EyeVisibilityCubit.get(context).isPassword,
                     suffixPressed: EyeVisibilityCubit.get(context)

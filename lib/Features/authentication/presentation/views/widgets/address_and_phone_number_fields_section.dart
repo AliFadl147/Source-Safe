@@ -1,10 +1,11 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:source_safe_project/Features/authentication/data/models/text_field_model.dart';
 import 'package:source_safe_project/Features/authentication/presentation/manager/auth_validation_cubit/auth_validation_cubit.dart';
 import 'package:source_safe_project/core/utils/app_images.dart';
+import 'package:source_safe_project/core/utils/app_strings.dart';
 import 'package:source_safe_project/core/widgets/custom_text_field_widget.dart';
-import 'package:source_safe_project/core/widgets/strings_manager.dart';
 
 class AddressAndPhonenumberFieldsSection extends StatefulWidget {
   const AddressAndPhonenumberFieldsSection({super.key});
@@ -50,10 +51,10 @@ class _AddressAndPhonenumberFieldsSectionState
             CustomTextFieldWidget(
               textFieldModel: TextFieldModel(
                 controller: _addressController,
-                label: AppStrings.address,
+                label: AppStrings.address.tr(),
                 onChanged: (value) =>
                     AuthValidationCubit.get(context).setAddress(value),
-                error: (isAddressValid) ? null : AppStrings.addressError,
+                error: (isAddressValid) ? null : AppStrings.addressError.tr(),
                 prefixIcon: Assets.imagesAddress,
               ),
             ),
@@ -63,11 +64,11 @@ class _AddressAndPhonenumberFieldsSectionState
               textFieldModel: TextFieldModel(
                 controller: _phoneNumberController,
                 keyboardType: TextInputType.phone,
-                label: AppStrings.phoneNumber,
+                label: AppStrings.phoneNumber.tr(),
                 onChanged: (value) =>
                     AuthValidationCubit.get(context).setPhoneNumber(value),
                 error:
-                    (isPhoneNumberValid) ? null : AppStrings.phoneNumberError,
+                    (isPhoneNumberValid) ? null : AppStrings.phoneNumberError.tr(),
                 prefixIcon: Assets.imagesPhone,
               ),
             ),
