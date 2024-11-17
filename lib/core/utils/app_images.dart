@@ -90,6 +90,10 @@ class Assets {
   /// assets/images/search.svg
   static const String imagesSearch = "assets/images/search.svg";
 
+  /// Assets for imagesSignUp
+  /// assets/images/signUp.svg
+  static const String imagesSignUp = "assets/images/signUp.svg";
+
   /// Assets for imagesStar
   /// assets/images/star.svg
   static const String imagesStar = "assets/images/star.svg";
