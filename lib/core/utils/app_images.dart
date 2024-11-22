@@ -22,6 +22,14 @@ class Assets {
   /// assets/images/administrator.svg
   static const String imagesAdministrator = "assets/images/administrator.svg";
 
+  /// Assets for imagesAvatar3
+  /// assets/images/avatar_3.svg
+  static const String imagesAvatar3 = "assets/images/avatar_3.svg";
+
+  /// Assets for imagesDashboard
+  /// assets/images/dashboard.svg
+  static const String imagesDashboard = "assets/images/dashboard.svg";
+
   /// Assets for imagesDollarSign
   /// assets/images/dollarSign.svg
   static const String imagesDollarSign = "assets/images/dollarSign.svg";

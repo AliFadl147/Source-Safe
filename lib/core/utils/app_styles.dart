@@ -13,6 +13,24 @@ abstract class AppStyles {
   //   );
   // }
 
+  static TextStyle styleRegular11(BuildContext context) {
+    return TextStyle(
+      color: AppColors.mediumGray,
+      fontSize: getResponsiveFontSize(context, fontSize: 11),
+      fontFamily: FontConstants.fontFamily,
+      fontWeight: FontWeight.w400,
+    );
+  }
+
+  static TextStyle styleRegular12(BuildContext context) {
+    return TextStyle(
+      color: AppColors.mediumGray,
+      fontSize: getResponsiveFontSize(context, fontSize: 12),
+      fontFamily: FontConstants.fontFamily,
+      fontWeight: FontWeight.w400,
+    );
+  }
+
   static TextStyle styleRegular16(context) {
     return TextStyle(
       color: AppColors.red,
@@ -40,6 +58,24 @@ abstract class AppStyles {
   //   );
   // }
 
+  // static TextStyle styleMedium14(BuildContext context) {
+  //   return TextStyle(
+  //     color: AppColors.darkShadeOfCyanBlue,
+  //     fontSize: getResponsiveFontSize(context, fontSize: 14),
+  //     fontFamily: FontConstants.fontFamily,
+  //     fontWeight: FontWeight.w500,
+  //   );
+  // }
+
+  static TextStyle styleMedium16(BuildContext context) {
+    return TextStyle(
+      color: AppColors.darkShadeOfCyanBlue,
+      fontSize: getResponsiveFontSize(context, fontSize: 16),
+      fontFamily: FontConstants.fontFamily,
+      fontWeight: FontWeight.w500,
+    );
+  }
+
   static TextStyle styleMedium18(BuildContext context) {
     return TextStyle(
       color: Colors.black54,
@@ -49,27 +85,27 @@ abstract class AppStyles {
     );
   }
 
-  static TextStyle styleSemiBold20(BuildContext context) {
-    return TextStyle(
-      color: AppColors.sonicSilver,
-      fontSize: getResponsiveFontSize(context, fontSize: 20),
-      fontFamily: FontConstants.fontFamily,
-      fontWeight: FontWeight.w600,
-    );
-  }
+  // static TextStyle styleSemiBold20(BuildContext context) {
+  //   return TextStyle(
+  //     color: AppColors.sonicSilver,
+  //     fontSize: getResponsiveFontSize(context, fontSize: 20),
+  //     fontFamily: FontConstants.fontFamily,
+  //     fontWeight: FontWeight.w600,
+  //   );
+  // }
 
-  static TextStyle styleSemiBold18(BuildContext context) {
-    return TextStyle(
-      color: AppColors.ligthBlack,
-      fontSize: getResponsiveFontSize(context, fontSize: 18),
-      fontFamily: FontConstants.fontFamily,
-      fontWeight: FontWeight.w600,
-    );
-  }
+  // static TextStyle styleSemiBold18(BuildContext context) {
+  //   return TextStyle(
+  //     color: AppColors.ligthBlack,
+  //     fontSize: getResponsiveFontSize(context, fontSize: 18),
+  //     fontFamily: FontConstants.fontFamily,
+  //     fontWeight: FontWeight.w600,
+  //   );
+  // }
 
   static TextStyle styleSemiBold16(BuildContext context) {
     return TextStyle(
-      color: AppColors.kPrimaryColor,
+      color: AppColors.darkShadeOfCyanBlue,
       fontSize: getResponsiveFontSize(context, fontSize: 16),
       fontFamily: FontConstants.fontFamily,
       fontWeight: FontWeight.w600,
@@ -94,18 +130,36 @@ abstract class AppStyles {
     );
   }
 
-  static TextStyle styleBold20(BuildContext context) {
+  // static TextStyle styleBold20(BuildContext context) {
+  //   return TextStyle(
+  //     color: AppColors.black,
+  //     fontSize: getResponsiveFontSize(context, fontSize: 20),
+  //     fontFamily: FontConstants.fontFamily,
+  //     fontWeight: FontWeight.w700,
+  //   );
+  // }
+
+  static TextStyle styleBold18(BuildContext context) {
     return TextStyle(
-      color: AppColors.black,
-      fontSize: getResponsiveFontSize(context, fontSize: 20),
+      fontSize: getResponsiveFontSize(context, fontSize: 18),
       fontFamily: FontConstants.fontFamily,
       fontWeight: FontWeight.w700,
     );
   }
 
-  static TextStyle styleBold18(BuildContext context) {
+  static TextStyle styleBold16(BuildContext context) {
     return TextStyle(
-      fontSize: getResponsiveFontSize(context, fontSize: 18),
+      color: AppColors.kPrimaryColor,
+      fontSize: getResponsiveFontSize(context, fontSize: 16),
+      fontFamily: FontConstants.fontFamily,
+      fontWeight: FontWeight.w700,
+    );
+  }
+
+  static TextStyle styleBold14(BuildContext context) {
+    return TextStyle(
+      color: AppColors.kPrimaryColor,
+      fontSize: getResponsiveFontSize(context, fontSize: 14),
       fontFamily: FontConstants.fontFamily,
       fontWeight: FontWeight.w700,
     );
