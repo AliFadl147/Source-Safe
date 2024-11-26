@@ -38,7 +38,7 @@ class _SwitchListTileListViewState extends State<SwitchListTileListView> {
       itemBuilder: (context, index) {
         return Padding(
           padding: const EdgeInsets.only(top: 20),
-          child: CustomSwitchListTile(switchListTileItemsModel: items[index]),
+          child: CustomSwitchListTile(switchListTileItemsModel: items[index], index: index,),
         );
       },
     );

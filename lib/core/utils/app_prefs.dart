@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:source_safe_project/core/utils/app_mode.dart';
 import 'package:source_safe_project/core/utils/language_manager.dart';
+import 'package:source_safe_project/core/utils/service_locator.dart';
 
 const String prefsKeyLang = "PREFS_KEY_LANG";
+const String prefsKeyMode = "PREFS_KEY_MODE";
 const String prefsKeyOnboardingScreenViewed =
     "PREFS_KEY_ONBOARDING_SCREEN_VIEWED";
 const String prefsKeyIsUserLoggedIn = "PREFS_KEY_IS_USER_LOGGED_IN";
@@ -49,6 +52,29 @@ class AppPreferences {
     }
   }
 
+  static Future<bool> getAppMode() async {
+    SharedPreferences shared = getIt.get<SharedPreferences>();
+    bool? mode = shared.getBool(prefsKeyMode);
+    if (mode != null) {
+      return mode;
+    } else {
+      // return default lang
+      return ModeType.light.getValue();
+    }
+  }
+
+  Future<void> changeAppMode() async {
+    bool currentMode = await getAppMode();
+
+    if (currentMode == ModeType.dark.getValue()) {
+      // set light
+      _sharedPreferences.setBool(prefsKeyMode, ModeType.light.getValue());
+    } else {
+      // set dark
+      _sharedPreferences.setBool(prefsKeyMode, ModeType.dark.getValue());
+    }
+  }
+
   // on boarding
 
   Future<void> setOnBoardingScreenViewed() async {
@@ -76,11 +102,11 @@ class AppPreferences {
   Future<String> getToken() async {
     return _sharedPreferences.getString(tOKEN) ?? '';
   }
-  
+
   // Future<void> setDeviceToken(String deviceToken) async {
   //   _sharedPreferences.setString(dEVICEToken, deviceToken);
   // }
-  
+
   // Future<String> getDeviceToken() async {
   //   return _sharedPreferences.getString(dEVICEToken) ?? '';
   // }

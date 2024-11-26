@@ -7,8 +7,8 @@ class TextFieldModel {
   final String? error;
   final GestureTapCallback? suffixPressed;
   final bool? isPassword;
-  final String? suffixIcon;
-  final String prefixIcon;
+  final IconData? suffixIcon;
+  final IconData prefixIcon;
   final String? initial;
   final bool? enable;
   final bool obscureText;
