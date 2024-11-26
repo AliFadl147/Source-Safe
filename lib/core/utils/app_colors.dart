@@ -4,6 +4,7 @@ class AppColors {
   static Color kPrimaryColor = const Color(0xff5BA2E0);
   static Color pastelBlue = const Color(0xFF99C7F5);
   static Color darkShadeOfCyanBlue = const Color(0xFF064061);
+  static Color darkFillColor = Color(0xff245774);
   static Color white = const Color(0xffFFFFFF);
   static Color black = const Color(0xff000000);
   //static Color ligthBlack = const Color(0xff212121);

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:source_safe_project/Features/authentication/data/models/text_field_model.dart';
 import 'package:source_safe_project/Features/authentication/presentation/manager/auth_validation_cubit/auth_validation_cubit.dart';
-import 'package:source_safe_project/core/utils/app_images.dart';
 import 'package:source_safe_project/core/utils/app_strings.dart';
 import 'package:source_safe_project/core/widgets/custom_text_field_widget.dart';
 
@@ -55,7 +54,7 @@ class _AddressAndPhonenumberFieldsSectionState
                 onChanged: (value) =>
                     AuthValidationCubit.get(context).setAddress(value),
                 error: (isAddressValid) ? null : AppStrings.addressError.tr(),
-                prefixIcon: Assets.imagesAddress,
+                prefixIcon: Icons.alternate_email,
               ),
             ),
             SizedBox(
@@ -69,7 +68,7 @@ class _AddressAndPhonenumberFieldsSectionState
                     AuthValidationCubit.get(context).setPhoneNumber(value),
                 error:
                     (isPhoneNumberValid) ? null : AppStrings.phoneNumberError.tr(),
-                prefixIcon: Assets.imagesPhone,
+                prefixIcon: Icons.call,
               ),
             ),
           ],

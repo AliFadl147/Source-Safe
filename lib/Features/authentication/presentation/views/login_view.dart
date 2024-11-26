@@ -4,7 +4,6 @@ import 'package:source_safe_project/Features/authentication/data/repos/auth_repo
 import 'package:source_safe_project/Features/authentication/presentation/manager/auth_cubit/auth_cubit.dart';
 import 'package:source_safe_project/Features/authentication/presentation/manager/auth_validation_cubit/auth_validation_cubit.dart';
 import 'package:source_safe_project/Features/authentication/presentation/views/widgets/login_view_body.dart';
-import 'package:source_safe_project/core/utils/app_colors.dart';
 import 'package:source_safe_project/core/utils/service_locator.dart';
 
 
@@ -35,7 +34,6 @@ class _LoginViewState extends State<LoginView> {
       child: BlocBuilder<AuthCubit, AuthState>(
         builder: (context, state) {
           return Scaffold(
-            backgroundColor: AppColors.white,
             body: LoginViewBody(),
           );
         },

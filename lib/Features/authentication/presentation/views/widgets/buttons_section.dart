@@ -27,7 +27,6 @@ class ButtonsSection extends StatelessWidget {
           child: CustomButton(
             foregroundColor: AppColors.white,
             text: buttonText,
-            backgroundColor: AppColors.kPrimaryColor,
             onPressed: onPressed,
           ),
         ),

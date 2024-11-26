@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:source_safe_project/core/utils/app_colors.dart';
 import 'package:source_safe_project/core/utils/app_images.dart';
-import 'package:source_safe_project/core/utils/app_styles.dart';
 import 'package:source_safe_project/core/widgets/custom_icon.dart';
 
 class TitleSection extends StatelessWidget {
@@ -21,9 +20,7 @@ class TitleSection extends StatelessWidget {
         Expanded(
           child: Text(
             text,
-            style: AppStyles.styleBold18(context).copyWith(
-              color: AppColors.deepCharcoal,
-            ),
+            style: Theme.of(context).textTheme.displayMedium,
           ),
         ),
         SizedBox(

@@ -4,24 +4,6 @@ import 'package:source_safe_project/core/utils/font_manager.dart';
 import 'package:source_safe_project/core/utils/size_config.dart';
 
 abstract class AppStyles {
-  // static TextStyle styleRegular24(BuildContext context) {
-  //   return TextStyle(
-  //     color: const Color(0xFF000000),
-  //     fontSize: getResponsiveFontSize(context, fontSize: 24),
-  //     fontFamily: FontConstants.fontFamily,
-  //     fontWeight: FontWeight.w400,
-  //   );
-  // }
-
-  static TextStyle styleRegular11(BuildContext context) {
-    return TextStyle(
-      color: AppColors.mediumGray,
-      fontSize: getResponsiveFontSize(context, fontSize: 11),
-      fontFamily: FontConstants.fontFamily,
-      fontWeight: FontWeight.w400,
-    );
-  }
-
   static TextStyle styleRegular12(BuildContext context) {
     return TextStyle(
       color: AppColors.mediumGray,
@@ -40,33 +22,6 @@ abstract class AppStyles {
     );
   }
 
-  // static TextStyle styleRegular12(BuildContext context) {
-  //   return TextStyle(
-  //     color: const Color(0xFF000000),
-  //     fontSize: getResponsiveFontSize(context, fontSize: 12),
-  //     fontFamily: FontConstants.fontFamily,
-  //     fontWeight: FontWeight.w400,
-  //   );
-  // }
-
-  // static TextStyle styleMedium20(BuildContext context) {
-  //   return TextStyle(
-  //     color: AppColors.gray74,
-  //     fontSize: getResponsiveFontSize(context, fontSize: 20),
-  //     fontFamily: FontConstants.fontFamily,
-  //     fontWeight: FontWeight.w500,
-  //   );
-  // }
-
-  // static TextStyle styleMedium14(BuildContext context) {
-  //   return TextStyle(
-  //     color: AppColors.darkShadeOfCyanBlue,
-  //     fontSize: getResponsiveFontSize(context, fontSize: 14),
-  //     fontFamily: FontConstants.fontFamily,
-  //     fontWeight: FontWeight.w500,
-  //   );
-  // }
-
   static TextStyle styleMedium16(BuildContext context) {
     return TextStyle(
       color: AppColors.darkShadeOfCyanBlue,
@@ -78,30 +33,12 @@ abstract class AppStyles {
 
   static TextStyle styleMedium18(BuildContext context) {
     return TextStyle(
-      color: Colors.black54,
+      color: AppColors.gray74,
       fontSize: getResponsiveFontSize(context, fontSize: 18),
       fontFamily: FontConstants.fontFamily,
       fontWeight: FontWeight.w500,
     );
   }
-
-  // static TextStyle styleSemiBold20(BuildContext context) {
-  //   return TextStyle(
-  //     color: AppColors.sonicSilver,
-  //     fontSize: getResponsiveFontSize(context, fontSize: 20),
-  //     fontFamily: FontConstants.fontFamily,
-  //     fontWeight: FontWeight.w600,
-  //   );
-  // }
-
-  // static TextStyle styleSemiBold18(BuildContext context) {
-  //   return TextStyle(
-  //     color: AppColors.ligthBlack,
-  //     fontSize: getResponsiveFontSize(context, fontSize: 18),
-  //     fontFamily: FontConstants.fontFamily,
-  //     fontWeight: FontWeight.w600,
-  //   );
-  // }
 
   static TextStyle styleSemiBold16(BuildContext context) {
     return TextStyle(
@@ -112,35 +49,9 @@ abstract class AppStyles {
     );
   }
 
-  // static TextStyle styleSemiBold24(BuildContext context) {
-  //   return TextStyle(
-  //     color: const Color(0xFF4EB7F2),
-  //     fontSize: getResponsiveFontSize(context, fontSize: 24),
-  //     fontFamily: FontConstants.fontFamily,
-  //     fontWeight: FontWeight.w600,
-  //   );
-  // }
-
-  static TextStyle styleBold29(BuildContext context) {
-    return TextStyle(
-      color: AppColors.black,
-      fontSize: getResponsiveFontSize(context, fontSize: 29),
-      fontFamily: FontConstants.fontFamily,
-      fontWeight: FontWeight.w700,
-    );
-  }
-
-  // static TextStyle styleBold20(BuildContext context) {
-  //   return TextStyle(
-  //     color: AppColors.black,
-  //     fontSize: getResponsiveFontSize(context, fontSize: 20),
-  //     fontFamily: FontConstants.fontFamily,
-  //     fontWeight: FontWeight.w700,
-  //   );
-  // }
-
   static TextStyle styleBold18(BuildContext context) {
     return TextStyle(
+      color: AppColors.deepCharcoal,
       fontSize: getResponsiveFontSize(context, fontSize: 18),
       fontFamily: FontConstants.fontFamily,
       fontWeight: FontWeight.w700,
@@ -151,15 +62,6 @@ abstract class AppStyles {
     return TextStyle(
       color: AppColors.kPrimaryColor,
       fontSize: getResponsiveFontSize(context, fontSize: 16),
-      fontFamily: FontConstants.fontFamily,
-      fontWeight: FontWeight.w700,
-    );
-  }
-
-  static TextStyle styleBold14(BuildContext context) {
-    return TextStyle(
-      color: AppColors.kPrimaryColor,
-      fontSize: getResponsiveFontSize(context, fontSize: 14),
       fontFamily: FontConstants.fontFamily,
       fontWeight: FontWeight.w700,
     );

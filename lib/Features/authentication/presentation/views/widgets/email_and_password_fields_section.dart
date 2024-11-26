@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:source_safe_project/Features/authentication/data/models/text_field_model.dart';
 import 'package:source_safe_project/Features/authentication/presentation/manager/auth_validation_cubit/auth_validation_cubit.dart';
 import 'package:source_safe_project/core/manager/eye_visibility_cubit/eye_visibility_cubit.dart';
-import 'package:source_safe_project/core/utils/app_images.dart';
 import 'package:source_safe_project/core/utils/app_strings.dart';
 import 'package:source_safe_project/core/widgets/custom_text_field_widget.dart';
 
@@ -63,7 +62,7 @@ class _EmailAndpasswordfieldssectionState
                 label: AppStrings.email.tr(),
                 onChanged: widget.onChangedEmail,
                 error: (isEmailValid) ? null : AppStrings.emailError.tr(),
-                prefixIcon: Assets.imagesEmailOutlined,
+                prefixIcon: Icons.email_outlined,
               ),
             ),
             SizedBox(
@@ -77,7 +76,7 @@ class _EmailAndpasswordfieldssectionState
                     label: AppStrings.password.tr(),
                     onChanged: widget.onChangedPassword,
                     error: (isPasswordValid) ? null : AppStrings.passwordError.tr(),
-                    prefixIcon: Assets.imagesLockOutlined,
+                    prefixIcon: Icons.lock_outline,
                     obscureText: EyeVisibilityCubit.get(context).isPassword,
                     suffixPressed: EyeVisibilityCubit.get(context)
                         .changePasswordVisibility,

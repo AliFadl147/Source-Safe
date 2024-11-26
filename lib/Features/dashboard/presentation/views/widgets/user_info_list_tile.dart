@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:source_safe_project/Features/dashboard/data/models/user_info_model.dart';
-import 'package:source_safe_project/core/utils/app_styles.dart';
 
 class UserInfoListTile extends StatelessWidget {
   const UserInfoListTile({
@@ -24,7 +23,7 @@ class UserInfoListTile extends StatelessWidget {
             alignment: AlignmentDirectional.centerStart,
             child: Text(
               userInfoModel.title,
-              style: AppStyles.styleSemiBold16(context),
+              style: Theme.of(context).textTheme.headlineMedium
             ),
           ),
           subtitle: FittedBox(
@@ -32,7 +31,7 @@ class UserInfoListTile extends StatelessWidget {
             alignment: AlignmentDirectional.centerStart,
             child: Text(
               userInfoModel.subTitle,
-              style: AppStyles.styleRegular12(context),
+              style: Theme.of(context).textTheme.bodySmall
             ),
           ),
         ),
