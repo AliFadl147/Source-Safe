@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:source_safe_project/Features/authentication/presentation/manager/auth_cubit/auth_cubit.dart';
 import 'package:source_safe_project/Features/authentication/presentation/manager/auth_validation_cubit/auth_validation_cubit.dart';
-import 'package:source_safe_project/Features/authentication/presentation/views/widgets/address_and_phone_number_fields_section.dart';
 import 'package:source_safe_project/Features/authentication/presentation/views/widgets/buttons_section.dart';
 import 'package:source_safe_project/Features/authentication/presentation/views/widgets/email_and_password_fields_section.dart';
 import 'package:source_safe_project/Features/authentication/presentation/views/widgets/first_name_and_last_name_fields_section.dart';
@@ -35,7 +34,6 @@ class TitleAndFieldsSectionInRegister extends StatelessWidget {
                 AuthValidationCubit.get(context).setRegisterPassword(value),
           ),
           SizedBox(height: MediaQuery.of(context).size.height / 33),
-          const AddressAndPhonenumberFieldsSection(),
           SizedBox(height: MediaQuery.of(context).size.height / 12),
           BlocBuilder<AuthValidationCubit, AuthValidationState>(
             builder: (context, state) {

@@ -5,6 +5,8 @@ import 'package:source_safe_project/Features/dashboard/presentation/views/widget
 import 'package:source_safe_project/Features/dashboard/presentation/views/widgets/switch_list_tile_list_view.dart';
 import 'package:source_safe_project/Features/dashboard/presentation/views/widgets/user_info_list_tile.dart';
 import 'package:source_safe_project/core/utils/app_images.dart';
+import 'package:source_safe_project/core/utils/app_strings.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
@@ -18,7 +20,7 @@ class CustomDrawer extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.zero, // Sharp borders
         ),
-        child: const CustomScrollView(
+        child: CustomScrollView(
           slivers: [
             SliverToBoxAdapter(
               child: UserInfoListTile(
@@ -36,7 +38,8 @@ class CustomDrawer extends StatelessWidget {
             SliverToBoxAdapter(
               child: ActiveDrawerItem(
                 drawerItemModel: DrawerItemModel(
-                    title: 'Dashboard', image: Assets.imagesDashboard),
+                    title: AppStrings.dashboard.tr(),
+                    image: Assets.imagesDashboard),
               ),
             ),
             SwitchListTileListView(),
@@ -50,7 +53,7 @@ class CustomDrawer extends StatelessWidget {
                   )),
                   InActiveDrawerItem(
                     drawerItemModel: DrawerItemModel(
-                        title: 'Logout account', image: Assets.imagesLogout),
+                        title: AppStrings.logoutAccount.tr(), image: Assets.imagesLogout),
                   ),
                   SizedBox(
                     height: 48,

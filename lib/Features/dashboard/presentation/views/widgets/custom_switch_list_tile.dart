@@ -15,7 +15,6 @@ class CustomSwitchListTile extends StatefulWidget {
 }
 
 class _CustomSwitchListTileState extends State<CustomSwitchListTile> {
-
   bool lights = false;
 
   @override
@@ -41,7 +40,9 @@ class _CustomSwitchListTileState extends State<CustomSwitchListTile> {
       onChanged: (value) {
         setState(() {
           lights = value;
-          if (widget.index == 1) {
+          if (widget.index == 0) {
+            CustomDrawerCubit.get(context).changeLanguage(context);
+          } else if (widget.index == 1) {
             CustomDrawerCubit.get(context).changeAppMode();
           }
         });

@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:source_safe_project/Features/authentication/presentation/views/login_view.dart';
 import 'package:source_safe_project/Features/authentication/presentation/views/register_view.dart';
 import 'package:source_safe_project/Features/dashboard/presentation/views/dashboard_view.dart';
 

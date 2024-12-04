@@ -43,9 +43,7 @@ class AuthCubit extends Cubit<AuthState> {
         AuthValidationCubit.get(context).registerObject.firstName,
         AuthValidationCubit.get(context).registerObject.lastName,
         AuthValidationCubit.get(context).registerObject.email,
-        AuthValidationCubit.get(context).registerObject.password,
-        AuthValidationCubit.get(context).registerObject.phoneNumber,
-        AuthValidationCubit.get(context).registerObject.address));
+        AuthValidationCubit.get(context).registerObject.password));
     result.fold((failure) {
       isLoading = false;
       emit(AuthFailureState(failure.errMessage));

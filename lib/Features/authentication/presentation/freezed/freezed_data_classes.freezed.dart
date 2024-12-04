@@ -19,7 +19,9 @@ mixin _$LoginObject {
   String get email => throw _privateConstructorUsedError;
   String get password => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of LoginObject
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $LoginObjectCopyWith<LoginObject> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -43,6 +45,8 @@ class _$LoginObjectCopyWithImpl<$Res, $Val extends LoginObject>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of LoginObject
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -81,6 +85,8 @@ class __$$LoginObjectImplCopyWithImpl<$Res>
       _$LoginObjectImpl _value, $Res Function(_$LoginObjectImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of LoginObject
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -128,7 +134,9 @@ class _$LoginObjectImpl implements _LoginObject {
   @override
   int get hashCode => Object.hash(runtimeType, email, password);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of LoginObject
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$LoginObjectImplCopyWith<_$LoginObjectImpl> get copyWith =>
@@ -143,8 +151,11 @@ abstract class _LoginObject implements LoginObject {
   String get email;
   @override
   String get password;
+
+  /// Create a copy of LoginObject
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LoginObjectImplCopyWith<_$LoginObjectImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -155,10 +166,10 @@ mixin _$RegisterObject {
   String get lastName => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   String get password => throw _privateConstructorUsedError;
-  String get address => throw _privateConstructorUsedError;
-  String get phoneNumber => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RegisterObject
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $RegisterObjectCopyWith<RegisterObject> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -169,13 +180,7 @@ abstract class $RegisterObjectCopyWith<$Res> {
           RegisterObject value, $Res Function(RegisterObject) then) =
       _$RegisterObjectCopyWithImpl<$Res, RegisterObject>;
   @useResult
-  $Res call(
-      {String firstName,
-      String lastName,
-      String email,
-      String password,
-      String address,
-      String phoneNumber});
+  $Res call({String firstName, String lastName, String email, String password});
 }
 
 /// @nodoc
@@ -188,6 +193,8 @@ class _$RegisterObjectCopyWithImpl<$Res, $Val extends RegisterObject>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of RegisterObject
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -195,8 +202,6 @@ class _$RegisterObjectCopyWithImpl<$Res, $Val extends RegisterObject>
     Object? lastName = null,
     Object? email = null,
     Object? password = null,
-    Object? address = null,
-    Object? phoneNumber = null,
   }) {
     return _then(_value.copyWith(
       firstName: null == firstName
@@ -215,14 +220,6 @@ class _$RegisterObjectCopyWithImpl<$Res, $Val extends RegisterObject>
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String,
-      address: null == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String,
-      phoneNumber: null == phoneNumber
-          ? _value.phoneNumber
-          : phoneNumber // ignore: cast_nullable_to_non_nullable
-              as String,
     ) as $Val);
   }
 }
@@ -235,13 +232,7 @@ abstract class _$$RegisterObjectImplCopyWith<$Res>
       __$$RegisterObjectImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String firstName,
-      String lastName,
-      String email,
-      String password,
-      String address,
-      String phoneNumber});
+  $Res call({String firstName, String lastName, String email, String password});
 }
 
 /// @nodoc
@@ -252,6 +243,8 @@ class __$$RegisterObjectImplCopyWithImpl<$Res>
       _$RegisterObjectImpl _value, $Res Function(_$RegisterObjectImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RegisterObject
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -259,8 +252,6 @@ class __$$RegisterObjectImplCopyWithImpl<$Res>
     Object? lastName = null,
     Object? email = null,
     Object? password = null,
-    Object? address = null,
-    Object? phoneNumber = null,
   }) {
     return _then(_$RegisterObjectImpl(
       null == firstName
@@ -279,14 +270,6 @@ class __$$RegisterObjectImplCopyWithImpl<$Res>
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String,
-      null == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String,
-      null == phoneNumber
-          ? _value.phoneNumber
-          : phoneNumber // ignore: cast_nullable_to_non_nullable
-              as String,
     ));
   }
 }
@@ -294,8 +277,8 @@ class __$$RegisterObjectImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$RegisterObjectImpl implements _RegisterObject {
-  _$RegisterObjectImpl(this.firstName, this.lastName, this.email, this.password,
-      this.address, this.phoneNumber);
+  _$RegisterObjectImpl(
+      this.firstName, this.lastName, this.email, this.password);
 
   @override
   final String firstName;
@@ -305,14 +288,10 @@ class _$RegisterObjectImpl implements _RegisterObject {
   final String email;
   @override
   final String password;
-  @override
-  final String address;
-  @override
-  final String phoneNumber;
 
   @override
   String toString() {
-    return 'RegisterObject(firstName: $firstName, lastName: $lastName, email: $email, password: $password, address: $address, phoneNumber: $phoneNumber)';
+    return 'RegisterObject(firstName: $firstName, lastName: $lastName, email: $email, password: $password)';
   }
 
   @override
@@ -326,17 +305,16 @@ class _$RegisterObjectImpl implements _RegisterObject {
                 other.lastName == lastName) &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.password, password) ||
-                other.password == password) &&
-            (identical(other.address, address) || other.address == address) &&
-            (identical(other.phoneNumber, phoneNumber) ||
-                other.phoneNumber == phoneNumber));
+                other.password == password));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, firstName, lastName, email, password, address, phoneNumber);
+  int get hashCode =>
+      Object.hash(runtimeType, firstName, lastName, email, password);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RegisterObject
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$RegisterObjectImplCopyWith<_$RegisterObjectImpl> get copyWith =>
@@ -345,13 +323,8 @@ class _$RegisterObjectImpl implements _RegisterObject {
 }
 
 abstract class _RegisterObject implements RegisterObject {
-  factory _RegisterObject(
-      final String firstName,
-      final String lastName,
-      final String email,
-      final String password,
-      final String address,
-      final String phoneNumber) = _$RegisterObjectImpl;
+  factory _RegisterObject(final String firstName, final String lastName,
+      final String email, final String password) = _$RegisterObjectImpl;
 
   @override
   String get firstName;
@@ -361,12 +334,11 @@ abstract class _RegisterObject implements RegisterObject {
   String get email;
   @override
   String get password;
+
+  /// Create a copy of RegisterObject
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String get address;
-  @override
-  String get phoneNumber;
-  @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$RegisterObjectImplCopyWith<_$RegisterObjectImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

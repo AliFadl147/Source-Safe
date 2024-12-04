@@ -11,7 +11,7 @@ class AuthValidationCubit extends Cubit<AuthValidationState> {
 
   var loginObject = LoginObject("", "");
 
-  var registerObject = RegisterObject("", "", "", "", "", "");
+  var registerObject = RegisterObject("", "", "", "");
 
   setLoginPassword(String password) {
     if (_isPasswordValid(password)) {
@@ -71,28 +71,6 @@ class AuthValidationCubit extends Cubit<AuthValidationState> {
     _areAllInputsRegisterValid();
   }
 
-  setAddress(String address) {
-    if (_isAddressValid(address)) {
-      //  update register view object
-      registerObject = registerObject.copyWith(address: address);
-    } else {
-      // reset address value in register view object
-      registerObject = registerObject.copyWith(address: "");
-    }
-    _areAllInputsRegisterValid();
-  }
-
-  setPhoneNumber(String phoneNumber) {
-    if (_isPhoneNumberValid(phoneNumber)) {
-      //  update register view object
-      registerObject = registerObject.copyWith(phoneNumber: phoneNumber);
-    } else {
-      // reset phoneNumber value in register view object
-      registerObject = registerObject.copyWith(phoneNumber: "");
-    }
-    _areAllInputsRegisterValid();
-  }
-
   bool _isFirstNameValid(String firstName) {
     if (firstName.length >= 3) {
       emit(FirstNameIsValid());
@@ -138,26 +116,6 @@ class AuthValidationCubit extends Cubit<AuthValidationState> {
     }
   }
 
-  bool _isPhoneNumberValid(String phoneNumber) {
-    if (phoneNumber.length >= 10 && phoneNumber.isNotEmpty) {
-      emit(PhoneNumberIsValid());
-      return true;
-    } else {
-      emit(PhoneNumberIsInValid());
-      return false;
-    }
-  }
-
-  bool _isAddressValid(String address) {
-    if (address.length >= 5 && address.isNotEmpty) {
-      emit(AddressIsValid());
-      return true;
-    } else {
-      emit(AddressIsInValid());
-      return false;
-    }
-  }
-
   void _areAllInputsLoginValid() {
     if (loginObject.email.isNotEmpty && loginObject.password.isNotEmpty) {
       emit(AllDataLoginIsValid());
@@ -168,9 +126,7 @@ class AuthValidationCubit extends Cubit<AuthValidationState> {
     if (registerObject.lastName.isNotEmpty &&
         registerObject.firstName.isNotEmpty &&
         registerObject.email.isNotEmpty &&
-        registerObject.password.isNotEmpty &&
-        registerObject.phoneNumber.isNotEmpty &&
-        registerObject.address.isNotEmpty) {
+        registerObject.password.isNotEmpty) {
       emit(AllDataRegisterIsValid());
     }
   }
@@ -186,8 +142,6 @@ class AuthValidationCubit extends Cubit<AuthValidationState> {
     registerObject = registerObject.copyWith(lastName: "");
     loginObject = loginObject.copyWith(email: "");
     loginObject = loginObject.copyWith(password: "");
-    registerObject = registerObject.copyWith(address: "");
-    registerObject = registerObject.copyWith(phoneNumber: "");
     emit(AllDataRegisterIsInValid());
   }
 }

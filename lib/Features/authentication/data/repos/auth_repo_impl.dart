@@ -14,7 +14,7 @@ class AuthRepoImpl implements AuthRepo {
   @override
   Future<Either<Failure, LoginModel>> login(LoginRequest loginRequest) async {
     try {
-      var result = await apiService.post(endPoint: '/Auth/login', data: {
+      var result = await apiService.post(endPoint: '/User/Login', data: {
         'email': loginRequest.email,
         'password': loginRequest.password,
       });
@@ -40,13 +40,10 @@ class AuthRepoImpl implements AuthRepo {
   Future<Either<Failure, RegisterModel>> register(
       RegisterRequest registerRequest) async {
     try {
-      var result = await apiService.post(endPoint: '/Auth/register', data: {
-        'firstName': registerRequest.firstName,
-        'lastName': registerRequest.lastName,
-        'email': registerRequest.email,
-        'password': registerRequest.password,
-        'phoneNumber': registerRequest.phoneNumber,
-        'address': registerRequest.address
+      var result = await apiService.post(endPoint: '/User/Register', data: {
+        "name": "${registerRequest.firstName}" " " "${registerRequest.lastName}",
+        "email": registerRequest.email,
+        "password": registerRequest.password
       });
 
       final value = RegisterModel.fromJson(result);

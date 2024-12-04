@@ -3,8 +3,7 @@
     "email": "البريد الإلكتروني",
     "your_email_is_empty_or_not_valid": "البريد الإلكتروني فارغ أو غير صالح",
     "password": "كلمة المرور",
-    "your_password_must_not_be_empty_or_less_than_6_characters_or_there_are_no_lowercase_and_uppercase_letters_or_symbols": 
-    "يجب ألا تكون كلمة المرور فارغة أو أقل من 6 أحرف ويجب أن تحتوي على حروف صغيرة وكبيرة أو رموز",
+    "your_password_must_not_be_empty_or_less_than_6_characters_or_there_are_no_lowercase_and_uppercase_letters_or_symbols": "يجب ألا تكون كلمة المرور فارغة أو أقل من 6 أحرف ويجب أن تحتوي على حروف صغيرة وكبيرة أو رموز",
     "login": "تسجيل الدخول",
     "create_an_account": "إنشاء حساب",
     "get_started_with_us_create_your_account_today": "ابدأ معنا - أنشئ حسابك اليوم!",
@@ -17,5 +16,12 @@
     "address_must_not_be_empty_or_less_than_5_characters": "يجب ألا يكون العنوان فارغًا أو أقل من 5 أحرف",
     "phone_number_must_not_be_empty_or_less_than_10": "يجب ألا يكون رقم الهاتف فارغًا أو أقل من 10 أرقام",
     "register": "تسجيل",
-    "already_have_an_account": "!لديك حساب بالفعل"
+    "already_have_an_account": "لديك حساب بالفعل !",
+    "dashboard": "لوحة التحكم",
+    "language_change": "تغيير اللغة",
+    "switch_language": "تبديل اللغة",
+    "lighting_mode": "وضع الإضاءة      ",
+    "switch_theme": "تبديل السمة",
+    "logout_account": "تسجيل الخروج من الحساب",
+    "access_and_reserve": "قم بالوصول إلى ملفات فريقك وحجزها بسلاسة وأمان"
 }
