@@ -1,7 +1,10 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:source_safe_project/Features/authentication/presentation/views/widgets/email_and_password_fields_section.dart';
 import 'package:source_safe_project/Features/authentication/presentation/views/widgets/login_fields_and_buttons.dart';
 import 'package:source_safe_project/Features/authentication/presentation/views/widgets/title_section.dart';
 import 'package:source_safe_project/core/utils/app_images.dart';
+import 'package:source_safe_project/core/utils/app_strings.dart';
 import 'package:source_safe_project/core/utils/functions.dart';
 import 'package:source_safe_project/core/widgets/custom_svg_picture.dart';
 
@@ -26,8 +29,7 @@ class LoginDesktopLayout extends StatelessWidget {
           child: Column(
             children: [
               TitleSection(
-                text:
-                    'Access and reserve your team\'s files seamlessly and securely.',
+                text: AppStrings.accessAndReserveYourTeamsFiles.tr(),
               ),
               const LoginFieldsAndButtons(),
             ],

@@ -22,4 +22,12 @@ class AppStrings{
       "phone_number_must_not_be_empty_or_less_than_10";
   static const register = 'register';
   static const alreadyHaveAnAccount = 'already_have_an_account';
+  static const dashboard = 'dashboard';
+  static const languageChange = 'language_change';
+  static const switchLanguage = 'switch_language';
+  static const lightingMode = 'lighting_mode';
+  static const switchTheme = 'switch_theme';
+  static const logoutAccount = 'logout_account';
+  static const accessAndReserveYourTeamsFiles =
+      'access_and_reserve';
 }
