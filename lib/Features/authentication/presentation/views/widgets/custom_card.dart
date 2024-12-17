@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 class CustomCard extends StatelessWidget {
   const CustomCard({
     super.key,
-    required GlobalKey<FormState> formKey, required this.child,
+    required GlobalKey<FormState> formKey,
+    required this.child,
   }) : _formKey = formKey;
 
   final GlobalKey<FormState> _formKey;

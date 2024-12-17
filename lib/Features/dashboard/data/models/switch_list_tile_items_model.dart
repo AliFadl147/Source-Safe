@@ -5,5 +5,6 @@ class SwitchListTileItemsModel {
   final String subtitle;
   final Widget widget;
 
-  const SwitchListTileItemsModel({required this.title, required this.subtitle, required this.widget});
+  const SwitchListTileItemsModel(
+      {required this.title, required this.subtitle, required this.widget});
 }

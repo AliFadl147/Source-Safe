@@ -1,10 +1,9 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:source_safe_project/Features/authentication/data/models/text_field_model.dart';
 import 'package:source_safe_project/Features/authentication/presentation/manager/auth_validation_cubit/auth_validation_cubit.dart';
-import 'package:source_safe_project/core/utils/app_strings.dart';
 import 'package:source_safe_project/core/widgets/custom_text_field_widget.dart';
+import 'package:source_safe_project/generated/l10n.dart';
 
 class FirstnameAndLastnameFieldsSection extends StatefulWidget {
   const FirstnameAndLastnameFieldsSection({super.key});
@@ -50,22 +49,21 @@ class _FirstnameAndLastnameFieldsSectionState
             CustomTextFieldWidget(
               textFieldModel: TextFieldModel(
                 controller: _firstNameController,
-                label: AppStrings.firstName.tr(),
+                label: S.of(context).firstName,
                 onChanged: (value) =>
                     AuthValidationCubit.get(context).setFirstName(value),
-                error: (isFirstNameValid) ? null : AppStrings.firstNameError.tr(),
+                error: (isFirstNameValid) ? null : S.of(context).firstNameError,
                 prefixIcon: Icons.first_page_rounded,
               ),
             ),
-            SizedBox(
-                height: MediaQuery.of(context).size.height / 33.0),
+            SizedBox(height: MediaQuery.of(context).size.height / 33.0),
             CustomTextFieldWidget(
               textFieldModel: TextFieldModel(
                 controller: _lastNameController,
-                label: AppStrings.lastName.tr(),
+                label: S.of(context).lastName,
                 onChanged: (value) =>
                     AuthValidationCubit.get(context).setLastName(value),
-                error: (isLastNameValid) ? null : AppStrings.lastNameError.tr(),
+                error: (isLastNameValid) ? null : S.of(context).lastNameError,
                 prefixIcon: Icons.last_page_rounded,
               ),
             ),

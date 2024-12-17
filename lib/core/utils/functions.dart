@@ -76,12 +76,16 @@ SnackBar customSnackBar({
       ),
     );
 
-  OutlineInputBorder customOutlineInputBorder({Color? color, double? width}) {
-    return OutlineInputBorder(
-      borderRadius: BorderRadius.circular(12),
-      borderSide: BorderSide(
-        color: color ?? AppColors.guyabano,
-        width: width ?? 1.5,
-      ),
-    );
-  }
+OutlineInputBorder customOutlineInputBorder({Color? color, double? width}) {
+  return OutlineInputBorder(
+    borderRadius: BorderRadius.circular(12),
+    borderSide: BorderSide(
+      color: color ?? AppColors.guyabano,
+      width: width ?? 1.5,
+    ),
+  );
+}
+
+final List<int> selectedindexes = [];
+
+String userId = "";

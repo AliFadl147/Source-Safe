@@ -6,7 +6,6 @@ import 'package:source_safe_project/Features/authentication/presentation/manager
 import 'package:source_safe_project/Features/authentication/presentation/views/widgets/login_view_body.dart';
 import 'package:source_safe_project/core/utils/service_locator.dart';
 
-
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
 
