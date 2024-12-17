@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -7,7 +6,7 @@ import 'package:source_safe_project/Features/authentication/presentation/manager
 import 'package:source_safe_project/Features/authentication/presentation/views/widgets/buttons_section.dart';
 import 'package:source_safe_project/Features/authentication/presentation/views/widgets/email_and_password_fields_section.dart';
 import 'package:source_safe_project/core/utils/app_router.dart';
-import 'package:source_safe_project/core/utils/app_strings.dart';
+import 'package:source_safe_project/generated/l10n.dart';
 
 class LoginFieldsAndButtons extends StatelessWidget {
   const LoginFieldsAndButtons({
@@ -29,8 +28,8 @@ class LoginFieldsAndButtons extends StatelessWidget {
         BlocBuilder<AuthValidationCubit, AuthValidationState>(
           builder: (context, state) {
             return ButtonsSection(
-              buttonText: AppStrings.login.tr(),
-              bottomCenterText: AppStrings.createAnAccount.tr(),
+              buttonText: S.of(context).login,
+              bottomCenterText: S.of(context).createAnAccount,
               onPressed: (state is AllDataLoginIsValid)
                   ? () {
                       AuthCubit.get(context).login(context);

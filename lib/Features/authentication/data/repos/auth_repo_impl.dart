@@ -41,7 +41,8 @@ class AuthRepoImpl implements AuthRepo {
       RegisterRequest registerRequest) async {
     try {
       var result = await apiService.post(endPoint: '/User/Register', data: {
-        "name": "${registerRequest.firstName}" " " "${registerRequest.lastName}",
+        "name":
+            "${registerRequest.firstName}" " " "${registerRequest.lastName}",
         "email": registerRequest.email,
         "password": registerRequest.password
       });

@@ -15,14 +15,12 @@ class RegisterDesktopLayout extends StatelessWidget {
       children: [
         Expanded(
           child: CustomSvgPicture(
-              image: Assets.imagesSignUp,
-              maxWidth: getMaxWidth(context)),
+              image: Assets.imagesSignUp, maxWidth: getMaxWidth(context)),
         ),
         SizedBox(
           width: 100,
         ),
-        Expanded(
-            child: TitleAndFieldsSectionInRegister()),
+        Expanded(child: TitleAndFieldsSectionInRegister()),
       ],
     );
   }

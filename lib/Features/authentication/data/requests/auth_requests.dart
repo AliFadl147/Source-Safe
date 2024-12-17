@@ -11,5 +11,10 @@ class RegisterRequest {
   String email;
   String password;
 
-  RegisterRequest(this.firstName, this.lastName, this.email, this.password,);
+  RegisterRequest(
+    this.firstName,
+    this.lastName,
+    this.email,
+    this.password,
+  );
 }

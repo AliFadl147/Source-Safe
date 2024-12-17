@@ -43,34 +43,28 @@ class RegisterViewBody extends StatelessWidget {
         return Stack(
           children: [
             Container(
-              width: double.infinity,
-              height: double.infinity,
-              color: AppColors.kPrimaryColor
-            ),
+                width: double.infinity,
+                height: double.infinity,
+                color: AppColors.kPrimaryColor),
             ClipPath(
               clipper: CircularClipper(),
               child: Container(
-                width: double.infinity,
-                height: double.infinity,
-                color: AppColors.pastelBlue // Separator color
-              ),
+                  width: double.infinity,
+                  height: double.infinity,
+                  color: AppColors.pastelBlue // Separator color
+                  ),
             ),
             CustomCard(
               formKey: _formKey,
               child: LayoutBuilder(builder: (context, constraints) {
                 if (constraints.maxWidth < 700) {
                   return Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 56
-                    ),
+                    padding: const EdgeInsets.symmetric(horizontal: 56),
                     child: TitleAndFieldsSectionInRegister(),
                   );
                 } else {
                   return Padding(
-                    padding: const EdgeInsets.only(
-                      left: 100,
-                      right: 100
-                    ),
+                    padding: const EdgeInsets.only(left: 100, right: 100),
                     child: RegisterDesktopLayout(),
                   );
                 }

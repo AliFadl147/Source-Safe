@@ -8,6 +8,7 @@ class LoginObject with _$LoginObject {
 
 @freezed
 class RegisterObject with _$RegisterObject {
-  factory RegisterObject(String firstName, String lastName, String email,
-      String password) = _RegisterObject;
+  factory RegisterObject(
+          String firstName, String lastName, String email, String password) =
+      _RegisterObject;
 }

@@ -6,13 +6,13 @@ import 'package:source_safe_project/Features/authentication/presentation/manager
 import 'package:source_safe_project/Features/authentication/presentation/views/widgets/register_view_body.dart';
 import 'package:source_safe_project/core/utils/service_locator.dart';
 
-
 class RegisterView extends StatefulWidget {
   const RegisterView({super.key});
 
   @override
   State<RegisterView> createState() => _RegisterViewState();
 }
+
 class _RegisterViewState extends State<RegisterView> {
   @override
   void initState() {

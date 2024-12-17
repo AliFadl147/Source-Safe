@@ -61,17 +61,12 @@ class LoginViewBody extends StatelessWidget {
             child: LayoutBuilder(builder: (context, constrains) {
               if (constrains.maxWidth < 700) {
                 return Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 56
-                  ),
+                  padding: const EdgeInsets.symmetric(horizontal: 56),
                   child: PictureAndFieldsSection(),
                 );
               } else {
                 return Padding(
-                  padding: const EdgeInsets.only(
-                    left: 56,
-                    right: 100
-                  ),
+                  padding: const EdgeInsets.only(left: 56, right: 100),
                   child: LoginDesktopLayout(),
                 );
               }

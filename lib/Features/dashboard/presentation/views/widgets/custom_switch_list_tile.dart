@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:source_safe_project/Features/dashboard/data/models/switch_list_tile_items_model.dart';
-import 'package:source_safe_project/core/manager/custom_drawer_cubit/custom_drawer_cubit.dart';
+import 'package:source_safe_project/core/manager/change_lang_cubit/change_lang_cubit.dart';
+import 'package:source_safe_project/core/manager/change_mode_cubit/change_mode_cubit.dart';
 import 'package:source_safe_project/core/utils/app_colors.dart';
 
 class CustomSwitchListTile extends StatefulWidget {
   const CustomSwitchListTile(
-      {super.key, required this.switchListTileItemsModel, required this.index});
+      {super.key,
+      required this.switchListTileItemsModel,
+      required this.index,
+      required this.lights});
 
   final SwitchListTileItemsModel switchListTileItemsModel;
   final int index;
+  final bool lights;
 
   @override
   State<CustomSwitchListTile> createState() => _CustomSwitchListTileState();
@@ -36,14 +41,13 @@ class _CustomSwitchListTileState extends State<CustomSwitchListTile> {
                   fontSize: 11,
                 )),
       ),
-      value: lights,
+      value: widget.lights,
       onChanged: (value) {
         setState(() {
-          lights = value;
           if (widget.index == 0) {
-            CustomDrawerCubit.get(context).changeLanguage(context);
+            ChangeLangCubit.get(context).changeLanguage();
           } else if (widget.index == 1) {
-            CustomDrawerCubit.get(context).changeAppMode();
+            ChangeModeCubit.get(context).changeAppMode();
           }
         });
       },

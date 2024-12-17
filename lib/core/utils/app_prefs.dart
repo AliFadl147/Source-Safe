@@ -28,28 +28,8 @@ class AppPreferences {
     }
   }
 
-  Future<void> changeAppLanguage() async {
-    String currentLang = await getAppLanguage();
-
-    if (currentLang == LanguageType.arabic.getValue()) {
-      // set english
-      _sharedPreferences.setString(
-          prefsKeyLang, LanguageType.english.getValue());
-    } else {
-      // set arabic
-      _sharedPreferences.setString(
-          prefsKeyLang, LanguageType.arabic.getValue());
-    }
-  }
-
-  Future<Locale> getLocal() async {
-    String currentLang = await getAppLanguage();
-
-    if (currentLang == LanguageType.arabic.getValue()) {
-      return arabicLocale;
-    } else {
-      return englishLocale;
-    }
+  Future<void> changeAppLanguage(String languageCode) async {
+    _sharedPreferences.setString(prefsKeyLang, languageCode);
   }
 
   static Future<bool> getAppMode() async {
@@ -99,8 +79,10 @@ class AppPreferences {
     _sharedPreferences.setString(tOKEN, token);
   }
 
-  Future<String> getToken() async {
-    return _sharedPreferences.getString(tOKEN) ?? '';
+  static Future<String> getToken() async {
+    SharedPreferences shared = getIt.get<SharedPreferences>();
+    print("tooooooooooooken: ${shared.getString(tOKEN)}");
+    return shared.getString(tOKEN) ?? '';
   }
 
   // Future<void> setDeviceToken(String deviceToken) async {

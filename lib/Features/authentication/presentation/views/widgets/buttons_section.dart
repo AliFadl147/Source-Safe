@@ -31,8 +31,7 @@ class ButtonsSection extends StatelessWidget {
           ),
         ),
         textButtonOnPressed != null
-            ? SizedBox(
-                height: MediaQuery.of(context).size.height / 22.0)
+            ? SizedBox(height: MediaQuery.of(context).size.height / 22.0)
             : const SizedBox(),
         textButtonOnPressed != null
             ? Align(

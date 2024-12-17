@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:source_safe_project/Features/dashboard/data/models/drawer_item_model.dart';
-import 'package:source_safe_project/Features/dashboard/data/models/user_info_model.dart';
-import 'package:source_safe_project/Features/dashboard/presentation/views/widgets/active_and_inactive_item.dart';
-import 'package:source_safe_project/Features/dashboard/presentation/views/widgets/switch_list_tile_list_view.dart';
-import 'package:source_safe_project/Features/dashboard/presentation/views/widgets/user_info_list_tile.dart';
-import 'package:source_safe_project/core/utils/app_images.dart';
-import 'package:source_safe_project/core/utils/app_strings.dart';
-import 'package:easy_localization/easy_localization.dart';
+import 'package:source_safe_project/Features/dashboard/presentation/views/widgets/create_group_and_add_files_and_logout_section.dart';
+import 'package:source_safe_project/Features/dashboard/presentation/views/widgets/language_and_lighting_mode_section.dart';
+import 'package:source_safe_project/Features/dashboard/presentation/views/widgets/user_info_and_dashboard_drawer_item_section.dart';
 
-class CustomDrawer extends StatelessWidget {
+class CustomDrawer extends StatefulWidget {
   const CustomDrawer({super.key});
 
+  @override
+  State<CustomDrawer> createState() => _CustomDrawerState();
+}
+
+class _CustomDrawerState extends State<CustomDrawer> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -22,44 +22,11 @@ class CustomDrawer extends StatelessWidget {
         ),
         child: CustomScrollView(
           slivers: [
-            SliverToBoxAdapter(
-              child: UserInfoListTile(
-                userInfoModel: UserInfoModel(
-                    image: Assets.imagesAvatar3,
-                    title: 'Lekan Okeowo',
-                    subTitle: 'demo@gmail.com'),
-              ),
-            ),
-            SliverToBoxAdapter(
-              child: SizedBox(
-                height: 8,
-              ),
-            ),
-            SliverToBoxAdapter(
-              child: ActiveDrawerItem(
-                drawerItemModel: DrawerItemModel(
-                    title: AppStrings.dashboard.tr(),
-                    image: Assets.imagesDashboard),
-              ),
-            ),
-            SwitchListTileListView(),
+            SliverToBoxAdapter(child: UserInfoAndDashboardDrawerItemSection()),
+            SliverToBoxAdapter(child: LanguageAndLightingModeSection()),
             SliverFillRemaining(
               hasScrollBody: false,
-              child: Column(
-                children: [
-                  Expanded(
-                      child: SizedBox(
-                    height: 20,
-                  )),
-                  InActiveDrawerItem(
-                    drawerItemModel: DrawerItemModel(
-                        title: AppStrings.logoutAccount.tr(), image: Assets.imagesLogout),
-                  ),
-                  SizedBox(
-                    height: 48,
-                  )
-                ],
-              ),
+              child: CreateGroupAndAddFilesAndLogoutSection(),
             )
           ],
         ),
