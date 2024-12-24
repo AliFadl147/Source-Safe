@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:source_safe_project/Features/authentication/data/models/register_model.dart';
@@ -64,6 +66,39 @@ class UserRepoImpl implements UserRepo {
           e.toString(),
         ),
       );
+    }
+  }
+
+  @override
+  Future<Either<Failure, RegisterModel>> uploadFile({
+    required String name,
+    required int groupId,
+    required int userId,
+    required Uint8List fileBytes,
+    required String fileName,
+  }) async {
+    try {
+      FormData formData = FormData.fromMap({
+        'name': name,
+        'groupId': groupId,
+        'formFile': MultipartFile.fromBytes(
+          fileBytes,
+          filename: fileName,
+        ),
+        'userId': userId,
+      });
+      var result = await apiService.postFormData(
+        endPoint: '/File/AddFile',
+        data: formData,
+        options: Options(headers: {'Content-Type': 'multipart/form-data'}),
+      );
+      final value = RegisterModel.fromJson(result);
+      return right(value);
+    } catch (e) {
+      if (e is DioException) {
+        return left(AuthServerFailure.fromDioError(e));
+      }
+      return left(AuthServerFailure(e.toString()));
     }
   }
 }

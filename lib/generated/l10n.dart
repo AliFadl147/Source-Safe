@@ -349,6 +349,26 @@ class S {
       args: [],
     );
   }
+
+  /// `File name`
+  String get fileName {
+    return Intl.message(
+      'File name',
+      name: 'fileName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `FileName must not be empty or Less than 3 characters`
+  String get fileNameError {
+    return Intl.message(
+      'FileName must not be empty or Less than 3 characters',
+      name: 'fileNameError',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

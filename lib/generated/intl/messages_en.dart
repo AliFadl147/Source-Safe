@@ -42,6 +42,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "emailError": MessageLookupByLibrary.simpleMessage(
             "your email is empty or not valid"),
+        "fileName": MessageLookupByLibrary.simpleMessage("File name"),
+        "fileNameError": MessageLookupByLibrary.simpleMessage(
+            "FileName must not be empty or Less than 3 characters"),
         "firstName": MessageLookupByLibrary.simpleMessage("First name"),
         "firstNameError": MessageLookupByLibrary.simpleMessage(
             "FirstName must not be empty or Less than 3 characters"),

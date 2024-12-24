@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:source_safe_project/Features/dashboard/presentation/manager/create_group_cubit/create_group_cubit.dart';
+import 'package:source_safe_project/Features/dashboard/presentation/manager/check_box_and_validation_cubit/check_box_and_validation_cubit.dart';
 import 'package:source_safe_project/core/utils/app_colors.dart';
 
 class CustomCheckBoxListTile extends StatelessWidget {
@@ -23,7 +23,7 @@ class CustomCheckBoxListTile extends StatelessWidget {
           Text(name ?? '', style: Theme.of(context).textTheme.headlineMedium),
       value: checkedUsers.containsKey(id),
       onChanged: (bool? value) {
-        CreateGroupCubit.get(context).onChangedCheckBox(value ?? false, id);
+        CheckBoxAndValidationCubit.get(context).onChangedCheckBox(value ?? false, id);
       },
       subtitle: Text(email ?? '', style: Theme.of(context).textTheme.bodySmall),
       activeColor: AppColors.kPrimaryColor,

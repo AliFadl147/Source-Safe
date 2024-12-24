@@ -25,4 +25,20 @@ class ApiService {
     var response = await _dio.post('$baseUrl$endPoint');
     return response.data;
   }
+    Future<dynamic> postFormData({
+    required String endPoint,
+    required dynamic data,
+    Options? options,
+  }) async {
+    const baseUrl = 'http://127.0.0.1:5114'; // Replace with your backend URL
+    final url = '$baseUrl$endPoint';
+
+    final response = await _dio.post(
+      url,
+      data: data,
+      options: options,
+    );
+
+    return response.data;
+  }
 }

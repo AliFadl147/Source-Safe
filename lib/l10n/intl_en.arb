@@ -28,5 +28,7 @@
     "addFile": "Add file",
     "search": "Search",
     "groupName": "Group name",
-    "groupNameError": "GroupName must not be empty or Less than 3 characters"
+    "groupNameError": "GroupName must not be empty or Less than 3 characters",
+    "fileName": "File name",
+    "fileNameError": "FileName must not be empty or Less than 3 characters"
 }

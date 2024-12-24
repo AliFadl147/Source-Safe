@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:source_safe_project/Features/authentication/data/models/text_field_model.dart';
 import 'package:source_safe_project/Features/dashboard/presentation/manager/add_group_cubit/add_group_cubit.dart';
-import 'package:source_safe_project/Features/dashboard/presentation/manager/create_group_cubit/create_group_cubit.dart';
+import 'package:source_safe_project/Features/dashboard/presentation/manager/check_box_and_validation_cubit/check_box_and_validation_cubit.dart';
 import 'package:source_safe_project/core/utils/app_colors.dart';
 import 'package:source_safe_project/core/utils/functions.dart';
 import 'package:source_safe_project/core/widgets/custom_button.dart';
@@ -31,7 +31,7 @@ class _ActionsAlertDialogSectionState extends State<ActionsAlertDialogSection> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<CreateGroupCubit, CreateGroupState>(
+    return BlocConsumer<CheckBoxAndValidationCubit, CheckBoxAndValidationState>(
       listener: (context, state) {
         if (state is GroupNameIsValid) {
           isGroupNameValid = true;
@@ -49,8 +49,8 @@ class _ActionsAlertDialogSectionState extends State<ActionsAlertDialogSection> {
                 fillColor: AppColors.white,
                 error: (isGroupNameValid) ? null : S.of(context).groupNameError,
                 onChanged: (value) =>
-                    CreateGroupCubit.get(context).setGroupName(value),
-                prefixIcon: Icons.search,
+                    CheckBoxAndValidationCubit.get(context).setGroupName(value),
+                prefixIcon: Icons.group,
               ),
             ),
             SizedBox(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:source_safe_project/Features/authentication/data/models/text_field_model.dart';
-import 'package:source_safe_project/Features/dashboard/presentation/manager/create_group_cubit/create_group_cubit.dart';
+import 'package:source_safe_project/Features/dashboard/presentation/manager/check_box_and_validation_cubit/check_box_and_validation_cubit.dart';
 import 'package:source_safe_project/Features/dashboard/presentation/manager/get_all_users_cubit/get_all_users_cubit.dart';
 import 'package:source_safe_project/Features/dashboard/presentation/views/widgets/actions_alert_dialog_section.dart';
 import 'package:source_safe_project/Features/dashboard/presentation/views/widgets/custom_check_box_list_tile.dart';
@@ -21,20 +21,23 @@ class CustomAlertDialog extends StatefulWidget {
 
 class _CustomAlertDialogState extends State<CustomAlertDialog> {
   late TextEditingController _searchController;
+  bool isGroupNameValid = true;
 
   @override
   void initState() {
     _searchController = TextEditingController();
-    CreateGroupCubit.get(context).checkedUsers.clear();
+    CheckBoxAndValidationCubit.get(context).checkedUsers.clear();
+    selectedindexes.clear();
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CreateGroupCubit, CreateGroupState>(
-      builder: (context, stateG) {
-        return BlocBuilder<GetAllUsersCubit, GetAllUsersState>(
-          builder: (context, state) {
+    return BlocBuilder<GetAllUsersCubit, GetAllUsersState>(
+      builder: (context, state) {
+        return BlocBuilder<CheckBoxAndValidationCubit,
+            CheckBoxAndValidationState>(
+          builder: (context, checkboxState) {
             return LayoutBuilder(
               builder: (_, constrains) => AlertDialog(
                 backgroundColor: AppColors.white,
@@ -63,13 +66,20 @@ class _CustomAlertDialogState extends State<CustomAlertDialog> {
                       state is GetAllUsersSuccess
                           ? SliverList.builder(
                               itemCount: state.usersModel.items.length,
-                              itemBuilder: (context, index) =>
+                              itemBuilder: (context, index) => Column(
+                                children: [
                                   CustomCheckBoxListTile(
-                                id: state.usersModel.items[index].id,
-                                name: state.usersModel.items[index].name,
-                                email: state.usersModel.items[index].email,
-                                checkedUsers:
-                                    CreateGroupCubit.get(context).checkedUsers,
+                                    id: state.usersModel.items[index].id,
+                                    name: state.usersModel.items[index].name,
+                                    email: state.usersModel.items[index].email,
+                                    checkedUsers:
+                                        CheckBoxAndValidationCubit.get(context)
+                                            .checkedUsers,
+                                  ),
+                                  if (index !=
+                                      state.usersModel.items.length - 1)
+                                    Divider(color: Colors.grey.shade300),
+                                ],
                               ),
                             )
                           : SliverToBoxAdapter(child: SizedBox()),
