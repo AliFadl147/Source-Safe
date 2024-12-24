@@ -1,12 +1,12 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:source_safe_project/Features/dashboard/presentation/freezed/dashboard_freezed_data_classes.dart';
 import 'package:source_safe_project/core/utils/functions.dart';
-part 'create_group_state.dart';
+part 'check_box_and_validation_state.dart';
 
-class CreateGroupCubit extends Cubit<CreateGroupState> {
-  CreateGroupCubit() : super(CreateGroupStateInitial());
+class CheckBoxAndValidationCubit extends Cubit<CheckBoxAndValidationState> {
+  CheckBoxAndValidationCubit() : super(CheckBoxAndValidationInitialState());
 
-  static CreateGroupCubit get(context) => BlocProvider.of(context);
+  static CheckBoxAndValidationCubit get(context) => BlocProvider.of(context);
 
   var createGroupObject = CreateGroupObject("");
 

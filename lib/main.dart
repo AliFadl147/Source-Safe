@@ -2,10 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
+import 'package:source_safe_project/Features/dashboard/data/repos/group_repo_impl.dart';
 import 'package:source_safe_project/Features/dashboard/data/repos/user_repo_impl.dart';
 import 'package:source_safe_project/Features/dashboard/presentation/manager/add_group_cubit/add_group_cubit.dart';
-import 'package:source_safe_project/Features/dashboard/presentation/manager/create_group_cubit/create_group_cubit.dart';
+import 'package:source_safe_project/Features/dashboard/presentation/manager/check_box_and_validation_cubit/check_box_and_validation_cubit.dart';
+import 'package:source_safe_project/Features/dashboard/presentation/manager/add_file_cubit/add_file_cubit.dart';
 import 'package:source_safe_project/Features/dashboard/presentation/manager/get_all_users_cubit/get_all_users_cubit.dart';
+import 'package:source_safe_project/Features/dashboard/presentation/manager/get_user_groups_cubit/get_user_groups_cubit.dart';
+import 'package:source_safe_project/Features/dashboard/presentation/manager/radio_and_validation_cubit/radio_and_validation_cubit.dart';
 import 'package:source_safe_project/core/manager/change_lang_cubit/change_lang_cubit.dart';
 import 'package:source_safe_project/core/manager/change_mode_cubit/change_mode_cubit.dart';
 import 'package:source_safe_project/core/manager/eye_visibility_cubit/eye_visibility_cubit.dart';
@@ -58,7 +62,7 @@ class _SourceSafeState extends State<SourceSafe> {
           create: (context) => ChangeLangCubit()..getSavedLanguage(),
         ),
         BlocProvider(
-          create: (context) => CreateGroupCubit(),
+          create: (context) => CheckBoxAndValidationCubit(),
         ),
         BlocProvider(
           create: (context) =>
@@ -66,6 +70,15 @@ class _SourceSafeState extends State<SourceSafe> {
         ),
         BlocProvider(
           create: (context) => AddGroupCubit(getIt.get<UserRepoImpl>()),
+        ),
+        BlocProvider(
+          create: (context) => AddFileCubit(getIt.get<UserRepoImpl>()),
+        ),
+        BlocProvider(
+          create: (context) => GetUserGroupsCubit(getIt.get<GroupRepoImpl>())..getUserGroups(userId: 2),
+        ),
+        BlocProvider(
+          create: (context) => RadioAndValidationCubit(),
         ),
       ],
       child: BlocBuilder<ChangeModeCubit, ChangeModeState>(

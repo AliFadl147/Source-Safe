@@ -41,6 +41,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
         "emailError": MessageLookupByLibrary.simpleMessage(
             "البريد الإلكتروني فارغ أو غير صالح"),
+        "fileName": MessageLookupByLibrary.simpleMessage("اسم الملف"),
+        "fileNameError": MessageLookupByLibrary.simpleMessage(
+            "يجب ألا يكون اسم الملف فارغًا أو أقل من 3 أحرف"),
         "firstName": MessageLookupByLibrary.simpleMessage("الاسم الأول"),
         "firstNameError": MessageLookupByLibrary.simpleMessage(
             "يجب ألا يكون الاسم الأول فارغًا أو أقل من 3 أحرف"),

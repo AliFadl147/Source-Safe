@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:source_safe_project/Features/dashboard/data/models/drawer_item_model.dart';
 import 'package:source_safe_project/Features/dashboard/presentation/views/widgets/active_and_inactive_item.dart';
+import 'package:source_safe_project/Features/dashboard/presentation/views/widgets/add_file_alert_dialog.dart';
 import 'package:source_safe_project/Features/dashboard/presentation/views/widgets/custom_alert_dialog.dart';
 import 'package:source_safe_project/core/utils/app_colors.dart';
 import 'package:source_safe_project/core/utils/app_images.dart';
@@ -51,7 +52,11 @@ class _CreateGroupAndAddFilesAndLogoutSectionState
             Icons.add_circle_outline_rounded,
             color: AppColors.kPrimaryColor,
           ),
-          onTap: () {},
+          onTap: () {
+            showDialog(
+                context: context,
+                builder: (BuildContext context) => Addfilealertdialog());
+          },
         ),
         SizedBox(
           height: 12,
