@@ -5,7 +5,8 @@ import 'package:source_safe_project/Features/dashboard/presentation/views/widget
 import 'package:source_safe_project/Features/dashboard/presentation/views/widgets/custom_alert_dialog.dart';
 import 'package:source_safe_project/core/utils/app_colors.dart';
 import 'package:source_safe_project/core/utils/app_images.dart';
-import 'package:source_safe_project/core/utils/functions.dart';
+import 'package:source_safe_project/core/utils/app_prefs.dart';
+import 'package:source_safe_project/core/utils/service_locator.dart';
 import 'package:source_safe_project/generated/l10n.dart';
 
 class CreateGroupAndAddFilesAndLogoutSection extends StatefulWidget {
@@ -20,6 +21,7 @@ class CreateGroupAndAddFilesAndLogoutSection extends StatefulWidget {
 
 class _CreateGroupAndAddFilesAndLogoutSectionState
     extends State<CreateGroupAndAddFilesAndLogoutSection> {
+  final AppPreferences appPreferences = getIt.get<AppPreferences>();
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -65,6 +67,9 @@ class _CreateGroupAndAddFilesAndLogoutSectionState
           isSvg: true,
           drawerItemModel: DrawerItemModel(
               title: S.of(context).logoutAccount, image: Assets.imagesLogout),
+          onTap: () {
+            appPreferences.logout(context);
+          },
         ),
         SizedBox(
           height: 24,

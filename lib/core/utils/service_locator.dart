@@ -36,7 +36,7 @@ Future<void> setupServiceLocator() async {
   }
 
   if (!GetIt.I.isRegistered<GroupRepoImpl>()) {
-    getIt
-        .registerSingleton<GroupRepoImpl>(GroupRepoImpl(getIt.get<ApiService>()));
+    getIt.registerSingleton<GroupRepoImpl>(
+        GroupRepoImpl(getIt.get<ApiService>()));
   }
 }

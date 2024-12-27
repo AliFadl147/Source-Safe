@@ -12,7 +12,7 @@ class GroupRepoImpl implements GroupRepo {
 
   @override
   Future<Either<Failure, GroupModel>> getUserGroups(
-      {required int userId}) async {
+      {required String userId}) async {
     try {
       var data = await apiService.get(endPoint: '/Group/GetUserGroups/$userId');
 

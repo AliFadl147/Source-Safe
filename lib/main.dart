@@ -24,10 +24,6 @@ import 'package:source_safe_project/generated/l10n.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await setupServiceLocator();
-  AppPreferences.getToken().then((value) {
-    Map<String, dynamic> decodedToken = JwtDecoder.decode(value);
-    userId = decodedToken['sub'];
-  });
   AppPreferences.getAppMode().then((mode) {
     runApp(SourceSafe(
       isDark: mode,
@@ -65,8 +61,8 @@ class _SourceSafeState extends State<SourceSafe> {
           create: (context) => CheckBoxAndValidationCubit(),
         ),
         BlocProvider(
-          create: (context) =>
-              GetAllUsersCubit(getIt.get<UserRepoImpl>())..getAllUsers(id: 2),
+          create: (context) => GetAllUsersCubit(getIt.get<UserRepoImpl>())
+            ..getAllUsers(id: userId),
         ),
         BlocProvider(
           create: (context) => AddGroupCubit(getIt.get<UserRepoImpl>()),
@@ -75,7 +71,8 @@ class _SourceSafeState extends State<SourceSafe> {
           create: (context) => AddFileCubit(getIt.get<UserRepoImpl>()),
         ),
         BlocProvider(
-          create: (context) => GetUserGroupsCubit(getIt.get<GroupRepoImpl>())..getUserGroups(userId: 2),
+          create: (context) => GetUserGroupsCubit(getIt.get<GroupRepoImpl>())
+            ..getUserGroups(userId: userId),
         ),
         BlocProvider(
           create: (context) => RadioAndValidationCubit(),

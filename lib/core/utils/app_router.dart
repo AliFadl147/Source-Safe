@@ -12,7 +12,7 @@ abstract class AppRouter {
       GoRoute(
         path: '/',
         builder: (context, state) {
-          return const DashBoradView();
+          return const LoginView();
         },
       ),
       GoRoute(

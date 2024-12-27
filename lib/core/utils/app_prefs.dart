@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:source_safe_project/core/utils/app_mode.dart';
 import 'package:source_safe_project/core/utils/language_manager.dart';
@@ -11,7 +12,7 @@ const String prefsKeyOnboardingScreenViewed =
 const String prefsKeyIsUserLoggedIn = "PREFS_KEY_IS_USER_LOGGED_IN";
 
 const String tOKEN = "TOKEN";
-
+const String refreshTOKEN = "REFRESH_TOKEN";
 const String dEVICEToken = "DEVICETOKEN";
 
 class AppPreferences {
@@ -79,10 +80,17 @@ class AppPreferences {
     _sharedPreferences.setString(tOKEN, token);
   }
 
-  static Future<String> getToken() async {
+  static Future<String?> getToken() async {
     SharedPreferences shared = getIt.get<SharedPreferences>();
-    print("tooooooooooooken: ${shared.getString(tOKEN)}");
     return shared.getString(tOKEN) ?? '';
+  }
+
+  Future<void> setRefreshToken(String refreshToken) async {
+    _sharedPreferences.setString(refreshTOKEN, refreshToken);
+  }
+
+  Future<String?> getRefreshToken() async {
+    return _sharedPreferences.getString(refreshTOKEN) ?? '';
   }
 
   // Future<void> setDeviceToken(String deviceToken) async {
@@ -93,9 +101,10 @@ class AppPreferences {
   //   return _sharedPreferences.getString(dEVICEToken) ?? '';
   // }
 
-  Future<void> logout() async {
-    // _sharedPreferences.remove(prefsKeyIsUserLoggedIn);
-    // _sharedPreferences.remove(TOKEN);
-    _sharedPreferences.clear();
+  Future<void> logout(BuildContext context) async {
+    GoRouter.of(context).go('/');
+    await _sharedPreferences.remove(tOKEN);
+    await _sharedPreferences.remove(refreshTOKEN);
+    await _sharedPreferences.remove(prefsKeyIsUserLoggedIn);
   }
 }

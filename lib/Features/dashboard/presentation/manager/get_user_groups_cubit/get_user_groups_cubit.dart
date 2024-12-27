@@ -10,7 +10,7 @@ class GetUserGroupsCubit extends Cubit<GetUserGroupsState> {
 
   final GroupRepo groupRepo;
 
-  Future<void> getUserGroups({required int userId,}) async {
+  Future<void> getUserGroups({required String userId,}) async {
     emit(GetUserGroupsLoading());
     var result = await groupRepo.getUserGroups(userId: userId);
     result.fold((failure) {

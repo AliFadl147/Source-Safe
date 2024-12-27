@@ -28,7 +28,7 @@ class AddFileCubit extends Cubit<AddFileState> {
         final response = await userRepo.uploadFile(
           name: name,
           groupId: groupId,
-          userId: 2,
+          userId: userId,
           fileBytes: fileBytes,
           fileName: fileName,
         );

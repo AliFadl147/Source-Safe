@@ -4,5 +4,5 @@ import 'package:source_safe_project/core/errors/failures.dart';
 
 abstract class GroupRepo {
   Future<Either<Failure, GroupModel>> getUserGroups(
-      {required int userId,});
+      {required String userId,});
 }
