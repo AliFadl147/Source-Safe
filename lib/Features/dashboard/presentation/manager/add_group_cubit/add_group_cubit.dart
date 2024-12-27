@@ -50,7 +50,7 @@ class AddGroupCubit extends Cubit<AddGroupState> {
           color: Colors.green, // Optional: add a custom color if needed
         ),
       );
-      GetAllUsersCubit.get(context).getAllUsers(id: 2);
+      GetAllUsersCubit.get(context).getAllUsers(id: userId);
       emit(AddGroupSuccessState());
     });
   }

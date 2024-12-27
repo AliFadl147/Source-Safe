@@ -6,7 +6,7 @@ import 'package:source_safe_project/core/errors/failures.dart';
 
 abstract class UserRepo {
   Future<Either<Failure, UsersModel>> getAllUsers(
-      {required int id, String? search});
+      {required String id, String? search});
   Future<Either<Failure, RegisterModel>> addGroup({
     required String userId,
     required String groupName,
@@ -15,7 +15,7 @@ abstract class UserRepo {
   Future<Either<Failure, RegisterModel>> uploadFile({
     required String name,
     required int groupId,
-    required int userId,
+    required String userId,
     required Uint8List fileBytes,
     required String fileName,
   });

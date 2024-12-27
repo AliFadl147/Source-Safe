@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:jwt_decoder/jwt_decoder.dart';
 import 'package:source_safe_project/Features/dashboard/presentation/views/widgets/dashboard_desktop_layout.dart';
+import 'package:source_safe_project/core/utils/app_prefs.dart';
+import 'package:source_safe_project/core/utils/functions.dart';
 import 'package:source_safe_project/core/widgets/adaptive_layout_widget.dart';
 
 class DashBoradView extends StatefulWidget {
@@ -11,6 +14,18 @@ class DashBoradView extends StatefulWidget {
 
 class _DashBoradViewState extends State<DashBoradView> {
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
+
+  @override
+  void initState() {
+    AppPreferences.getToken().then((value) {
+      if (value != null) {
+        Map<String, dynamic> decodedToken = JwtDecoder.decode(value);
+        userId = decodedToken['sub']; // No refresh token available
+      }
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

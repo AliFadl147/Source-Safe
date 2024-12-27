@@ -15,7 +15,7 @@ class UserRepoImpl implements UserRepo {
 
   @override
   Future<Either<Failure, UsersModel>> getAllUsers(
-      {required int id, String? search}) async {
+      {required String id, String? search}) async {
     try {
       var data = await apiService.get(
           endPoint: search != null
@@ -73,7 +73,7 @@ class UserRepoImpl implements UserRepo {
   Future<Either<Failure, RegisterModel>> uploadFile({
     required String name,
     required int groupId,
-    required int userId,
+    required String userId,
     required Uint8List fileBytes,
     required String fileName,
   }) async {

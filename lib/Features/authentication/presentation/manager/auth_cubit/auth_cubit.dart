@@ -31,7 +31,7 @@ class AuthCubit extends Cubit<AuthState> {
     }, (data) {
       isLoading = false;
       _appPreferences.setToken(data.token!);
-
+      _appPreferences.setRefreshToken(data.refreshToken!);
       emit(AuthSuccessState());
     });
   }

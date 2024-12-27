@@ -1,6 +1,7 @@
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:source_safe_project/Features/authentication/presentation/manager/auth_cubit/auth_cubit.dart';
 import 'package:source_safe_project/Features/authentication/presentation/manager/auth_validation_cubit/auth_validation_cubit.dart';
 import 'package:source_safe_project/Features/authentication/presentation/views/widgets/circular_clipper.dart';
@@ -9,6 +10,7 @@ import 'package:source_safe_project/Features/authentication/presentation/views/w
 import 'package:source_safe_project/Features/authentication/presentation/views/widgets/picture_and_fields_section.dart';
 import 'package:source_safe_project/core/utils/app_colors.dart';
 import 'package:source_safe_project/core/utils/app_prefs.dart';
+import 'package:source_safe_project/core/utils/app_router.dart';
 import 'package:source_safe_project/core/utils/functions.dart';
 import 'package:source_safe_project/core/utils/service_locator.dart';
 
@@ -31,6 +33,7 @@ class LoginViewBody extends StatelessWidget {
               color: AppColors.successGren);
           showSnackBar(context, snackBar);
           _appPreferences.setUserLoggedIn();
+          GoRouter.of(context).go(AppRouter.kDashboardView);
         } else if (state is AuthFailureState) {
           snackBar = customSnackBar(
             title: 'On Snap',

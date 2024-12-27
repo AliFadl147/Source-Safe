@@ -10,7 +10,7 @@ class GetAllUsersCubit extends Cubit<GetAllUsersState> {
 
   final UserRepo userRepo;
 
-  Future<void> getAllUsers({required int id, String? search}) async {
+  Future<void> getAllUsers({required String id, String? search}) async {
     emit(GetAllUsersLoading());
     var result = await userRepo.getAllUsers(id: id, search: search);
     result.fold((failure) {
