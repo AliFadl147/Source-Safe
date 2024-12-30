@@ -62,7 +62,7 @@ class _SourceSafeState extends State<SourceSafe> {
         ),
         BlocProvider(
           create: (context) => GetAllUsersCubit(getIt.get<UserRepoImpl>())
-            ..getAllUsers(id: userId),
+            //..getAllUsers(id: userId),
         ),
         BlocProvider(
           create: (context) => AddGroupCubit(getIt.get<UserRepoImpl>()),
@@ -72,7 +72,7 @@ class _SourceSafeState extends State<SourceSafe> {
         ),
         BlocProvider(
           create: (context) => GetUserGroupsCubit(getIt.get<GroupRepoImpl>())
-            ..getUserGroups(userId: userId),
+            //..getUserGroups(userId: userId),
         ),
         BlocProvider(
           create: (context) => RadioAndValidationCubit(),

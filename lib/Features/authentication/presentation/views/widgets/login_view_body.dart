@@ -32,8 +32,8 @@ class LoginViewBody extends StatelessWidget {
               contentType: ContentType.success,
               color: AppColors.successGren);
           showSnackBar(context, snackBar);
+          GoRouter.of(context).replace(AppRouter.kDashboardView);
           _appPreferences.setUserLoggedIn();
-          GoRouter.of(context).go(AppRouter.kDashboardView);
         } else if (state is AuthFailureState) {
           snackBar = customSnackBar(
             title: 'On Snap',

@@ -5,6 +5,8 @@ import 'package:source_safe_project/Features/dashboard/presentation/manager/radi
 import 'package:source_safe_project/Features/dashboard/presentation/views/widgets/actions_add_file_alert_dialog_section.dart';
 import 'package:source_safe_project/Features/dashboard/presentation/views/widgets/custom_radio_list_tile.dart';
 import 'package:source_safe_project/core/utils/app_colors.dart';
+import 'package:source_safe_project/core/utils/app_prefs.dart';
+import 'package:source_safe_project/core/utils/service_locator.dart';
 
 class Addfilealertdialog extends StatefulWidget {
   const Addfilealertdialog({
@@ -16,9 +18,28 @@ class Addfilealertdialog extends StatefulWidget {
 }
 
 class _AddfilealertdialogState extends State<Addfilealertdialog> {
+  AppPreferences appPreferences = getIt.get<AppPreferences>();
+  
+  Future<void> _initializeData() async {
+    try {
+      final userId = await appPreferences.getUserId();
+      if (!mounted) return; // Check if the widget is still mounted
+      if (userId != null) {
+        GetUserGroupsCubit.get(context).getUserGroups(userId: userId);
+      } else {
+        print('Failed to retrieve userId');
+      }
+    } catch (e) {
+      if (mounted) {
+        print('Error: $e');
+      }
+    }
+  }
+
   @override
   void initState() {
     RadioAndValidationCubit.get(context).selectedGroup = null;
+    _initializeData();
     super.initState();
   }
 

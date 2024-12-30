@@ -70,9 +70,8 @@ class TokenInterceptor extends Interceptor {
           loginModel.refreshToken != null) {
         await appPreferences.setToken(loginModel.token!);
         await appPreferences.setRefreshToken(loginModel.refreshToken!);
-        Map<String, dynamic> decodedToken =
-            JwtDecoder.decode(loginModel.token!);
-        userId = decodedToken['sub'];
+        await appPreferences
+            .setUserId(JwtDecoder.decode(loginModel.token!)['sub']);
         return true;
       } else {
         return false;

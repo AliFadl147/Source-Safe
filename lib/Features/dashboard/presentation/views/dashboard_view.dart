@@ -14,18 +14,6 @@ class DashBoradView extends StatefulWidget {
 
 class _DashBoradViewState extends State<DashBoradView> {
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
-
-  @override
-  void initState() {
-    AppPreferences.getToken().then((value) {
-      if (value != null) {
-        Map<String, dynamic> decodedToken = JwtDecoder.decode(value);
-        userId = decodedToken['sub']; // No refresh token available
-      }
-    });
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
