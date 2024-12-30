@@ -13,6 +13,7 @@ const String prefsKeyIsUserLoggedIn = "PREFS_KEY_IS_USER_LOGGED_IN";
 
 const String tOKEN = "TOKEN";
 const String refreshTOKEN = "REFRESH_TOKEN";
+const String userID = "USER_ID";
 const String dEVICEToken = "DEVICETOKEN";
 
 class AppPreferences {
@@ -93,6 +94,13 @@ class AppPreferences {
     return _sharedPreferences.getString(refreshTOKEN) ?? '';
   }
 
+  Future<void> setUserId(String userId) async {
+    _sharedPreferences.setString(userID, userId);
+  }
+
+  Future<String?> getUserId() async {
+    return _sharedPreferences.getString(userID) ?? '';
+  }
   // Future<void> setDeviceToken(String deviceToken) async {
   //   _sharedPreferences.setString(dEVICEToken, deviceToken);
   // }

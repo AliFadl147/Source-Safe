@@ -88,6 +88,4 @@ OutlineInputBorder customOutlineInputBorder({Color? color, double? width}) {
 
 final List<int> selectedindexes = [];
 
-String userId = '';
-
 int groupId = 0;

@@ -6,7 +6,9 @@ import 'package:source_safe_project/Features/dashboard/presentation/manager/get_
 import 'package:source_safe_project/Features/dashboard/presentation/views/widgets/actions_alert_dialog_section.dart';
 import 'package:source_safe_project/Features/dashboard/presentation/views/widgets/custom_check_box_list_tile.dart';
 import 'package:source_safe_project/core/utils/app_colors.dart';
+import 'package:source_safe_project/core/utils/app_prefs.dart';
 import 'package:source_safe_project/core/utils/functions.dart';
+import 'package:source_safe_project/core/utils/service_locator.dart';
 import 'package:source_safe_project/core/widgets/custom_text_field_widget.dart';
 import 'package:source_safe_project/generated/l10n.dart';
 
@@ -22,13 +24,31 @@ class CustomAlertDialog extends StatefulWidget {
 class _CustomAlertDialogState extends State<CustomAlertDialog> {
   late TextEditingController _searchController;
   bool isGroupNameValid = true;
+  AppPreferences appPreferences = getIt.get<AppPreferences>();
+
+  Future<void> _initializeData() async {
+    try {
+      final userId = await appPreferences.getUserId();
+      if (!mounted) return; // Check if the widget is still mounted
+      if (userId != null) {
+        GetAllUsersCubit.get(context).getAllUsers(id: userId);
+      } else {
+        print('Failed to retrieve userId');
+      }
+    } catch (e) {
+      if (mounted) {
+        print('Error: $e');
+      }
+    }
+  }
 
   @override
   void initState() {
+    super.initState();
     _searchController = TextEditingController();
     CheckBoxAndValidationCubit.get(context).checkedUsers.clear();
     selectedindexes.clear();
-    super.initState();
+    _initializeData(); // Call the async initializer
   }
 
   @override

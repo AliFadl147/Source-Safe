@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:source_safe_project/Features/dashboard/presentation/views/widgets/custom_drawer.dart';
+import 'package:source_safe_project/Features/dashboard/presentation/views/widgets/test/all_user_groups_and_quick_invoice_section.dart';
 
 class DashboardDesktopLayout extends StatelessWidget {
   const DashboardDesktopLayout({super.key});
@@ -23,10 +24,9 @@ class DashboardDesktopLayout extends StatelessWidget {
                     Expanded(
                         flex: 2,
                         child: Padding(
-                            padding: EdgeInsets.only(top: 40),
-                            child:
-                                SizedBox() //AllExpensessAndQuickInvoiceSection(),
-                            )),
+                          padding: EdgeInsets.only(top: 40),
+                          child: AllUserGroupsAndQuickInvoiceSection(),
+                        )),
                     SizedBox(
                       width: 24,
                     ),

@@ -4,6 +4,34 @@ import 'package:source_safe_project/core/utils/font_manager.dart';
 import 'package:source_safe_project/core/utils/size_config.dart';
 
 abstract class AppStyles {
+  /*          */
+  static TextStyle styleRegular14(BuildContext context) {
+    return TextStyle(
+      color: const Color(0xFFAAAAAA),
+      fontSize: getResponsiveFontSize(context, fontSize: 14),
+      fontFamily: 'Montserrat',
+      fontWeight: FontWeight.w400,
+    );
+  }
+
+  static TextStyle styleSemiBold24(BuildContext context) {
+    return TextStyle(
+      color: const Color(0xFF4EB7F2),
+      fontSize: getResponsiveFontSize(context, fontSize: 24),
+      fontFamily: 'Montserrat',
+      fontWeight: FontWeight.w600,
+    );
+  }
+
+    static TextStyle styleSemiBold20(BuildContext context) {
+    return TextStyle(
+      color: const Color(0xFF064061),
+      fontSize: getResponsiveFontSize(context, fontSize: 20),
+      fontFamily: 'Montserrat',
+      fontWeight: FontWeight.w600,
+    );
+  }
+  /*          */
   static TextStyle styleRegular12(BuildContext context) {
     return TextStyle(
       color: AppColors.mediumGray,
