@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:source_safe_project/Features/dashboard/data/models/group_model/group_model/group_model.dart';
+import 'package:source_safe_project/Features/dashboard/data/models/group_model/group_model.dart';
 import 'package:source_safe_project/Features/dashboard/data/repos/group_repo.dart';
 part 'get_user_groups_state.dart';
 
@@ -10,7 +10,9 @@ class GetUserGroupsCubit extends Cubit<GetUserGroupsState> {
 
   final GroupRepo groupRepo;
 
-  Future<void> getUserGroups({required String userId,}) async {
+  Future<void> getUserGroups({
+    required String userId,
+  }) async {
     emit(GetUserGroupsLoading());
     var result = await groupRepo.getUserGroups(userId: userId);
     result.fold((failure) {
@@ -20,4 +22,3 @@ class GetUserGroupsCubit extends Cubit<GetUserGroupsState> {
     });
   }
 }
-

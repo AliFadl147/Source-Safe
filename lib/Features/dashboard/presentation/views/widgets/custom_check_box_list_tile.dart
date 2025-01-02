@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:source_safe_project/Features/dashboard/presentation/manager/check_box_and_validation_cubit/check_box_and_validation_cubit.dart';
 import 'package:source_safe_project/core/utils/app_colors.dart';
 
 class CustomCheckBoxListTile extends StatelessWidget {
@@ -9,23 +8,32 @@ class CustomCheckBoxListTile extends StatelessWidget {
     required this.email,
     required this.checkedUsers,
     required this.id,
+    required this.onChanged,
+    this.style,
   });
 
   final int id;
   final String? name;
   final String? email;
   final Map<int, bool> checkedUsers;
+  final ValueChanged<bool?>? onChanged;
+  final TextStyle? style;
 
   @override
   Widget build(BuildContext context) {
     return CheckboxListTile(
-      title:
-          Text(name ?? '', style: Theme.of(context).textTheme.headlineMedium),
+      title: FittedBox(
+          fit: BoxFit.scaleDown,
+          alignment: AlignmentDirectional.centerStart,
+          child: Text(name ?? '',
+              style: Theme.of(context).textTheme.headlineMedium)),
       value: checkedUsers.containsKey(id),
-      onChanged: (bool? value) {
-        CheckBoxAndValidationCubit.get(context).onChangedCheckBox(value ?? false, id);
-      },
-      subtitle: Text(email ?? '', style: Theme.of(context).textTheme.bodySmall),
+      onChanged: onChanged,
+      subtitle: FittedBox(
+          fit: BoxFit.scaleDown,
+          alignment: AlignmentDirectional.centerStart,
+          child:
+              Text(email ?? '', style: style ?? Theme.of(context).textTheme.bodySmall)),
       activeColor: AppColors.kPrimaryColor,
       side: BorderSide(
           color: AppColors.darkShadeOfCyanBlue,

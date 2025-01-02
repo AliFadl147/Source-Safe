@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
 import 'package:source_safe_project/Features/authentication/data/repos/auth_repo.dart';
 import 'package:source_safe_project/Features/authentication/data/requests/auth_requests.dart';
 import 'package:source_safe_project/Features/authentication/presentation/manager/auth_validation_cubit/auth_validation_cubit.dart';
 import 'package:source_safe_project/core/utils/app_prefs.dart';
-import 'package:source_safe_project/core/utils/app_router.dart';
-import 'package:source_safe_project/core/utils/functions.dart';
 import 'package:source_safe_project/core/utils/service_locator.dart';
 part 'auth_state.dart';
 

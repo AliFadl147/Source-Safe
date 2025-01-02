@@ -1,9 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:source_safe_project/Features/authentication/presentation/views/widgets/email_and_password_fields_section.dart';
-import 'package:source_safe_project/Features/dashboard/data/models/switch_list_tile_items_model.dart';
-import 'package:source_safe_project/Features/dashboard/presentation/views/widgets/custom_switch_list_tile.dart';
-import 'package:source_safe_project/core/utils/app_colors.dart';
-import 'package:source_safe_project/generated/l10n.dart';
 
 class SwitchListTileListView extends StatefulWidget {
   const SwitchListTileListView({
