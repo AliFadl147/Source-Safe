@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:source_safe_project/Features/dashboard/data/models/group_model/group_model/group_model.dart';
-import 'package:source_safe_project/Features/dashboard/data/models/group_model/group_model/item.dart';
-import 'package:source_safe_project/Features/dashboard/presentation/views/widgets/test/all_user_groups_item_header.dart';
+import 'package:source_safe_project/Features/dashboard/data/models/group_model/item.dart';
+import 'package:source_safe_project/Features/dashboard/presentation/views/widgets/all_user_groups_and_all_group_files_widgets/all_user_groups_item_header.dart';
 import 'package:source_safe_project/core/utils/app_styles.dart';
 
 class InActiveAllUserGroupsItem extends StatelessWidget {

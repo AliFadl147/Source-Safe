@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
+import 'package:source_safe_project/core/utils/api_service.dart';
 import 'package:source_safe_project/core/utils/app_colors.dart';
 import 'package:source_safe_project/core/utils/size_config.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 final dPassValid = RegExp(r'\d');
 final sPassValid = RegExp(r'\W');
@@ -86,6 +88,28 @@ OutlineInputBorder customOutlineInputBorder({Color? color, double? width}) {
   );
 }
 
-final List<int> selectedindexes = [];
+void handleFileTap({
+  required BuildContext context,
+  required String filePath,
+}) async {
+  final fileUrl = Uri.parse(ApiService.baseUrl).resolve(filePath);
+  if (await canLaunchUrl(fileUrl)) {
+    await launchUrl(fileUrl);
+  } else {
+    if (context.mounted) {
+      showSnackBar(
+        context,
+        customSnackBar(
+          title: 'Error',
+          message: 'Could not open file: $fileUrl',
+          contentType: ContentType.failure,
+          color: Colors.red,
+        ),
+      );
+    }
+  }
+}
 
-int groupId = 0;
+final List<int> selectedindexes = [];
+final List<int> filesSelectedindexes = [];
+int groupId = 1;

@@ -4,6 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:source_safe_project/Features/authentication/data/repos/auth_repo_impl.dart';
+import 'package:source_safe_project/Features/dashboard/data/repos/file_repo_impl.dart';
 import 'package:source_safe_project/Features/dashboard/data/repos/group_repo_impl.dart';
 import 'package:source_safe_project/Features/dashboard/data/repos/user_repo_impl.dart';
 import 'package:source_safe_project/core/utils/app_prefs.dart';
@@ -38,5 +39,10 @@ Future<void> setupServiceLocator() async {
   if (!GetIt.I.isRegistered<GroupRepoImpl>()) {
     getIt.registerSingleton<GroupRepoImpl>(
         GroupRepoImpl(getIt.get<ApiService>()));
+  }
+
+  if (!GetIt.I.isRegistered<FileRepoImpl>()) {
+    getIt.registerSingleton<FileRepoImpl>(
+        FileRepoImpl(getIt.get<ApiService>()));
   }
 }

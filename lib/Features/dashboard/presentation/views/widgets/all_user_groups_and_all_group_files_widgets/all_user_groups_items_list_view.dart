@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:source_safe_project/Features/dashboard/data/models/all_user_groups_item_model.dart';
 import 'package:source_safe_project/Features/dashboard/presentation/manager/get_user_groups_cubit/get_user_groups_cubit.dart';
-import 'package:source_safe_project/Features/dashboard/presentation/views/widgets/test/all_user_groups_item.dart';
-import 'package:source_safe_project/core/utils/app_images.dart';
+import 'package:source_safe_project/Features/dashboard/presentation/views/widgets/all_user_groups_and_all_group_files_widgets/all_user_groups_item.dart';
 import 'package:source_safe_project/core/utils/app_prefs.dart';
+import 'package:source_safe_project/core/utils/functions.dart';
 import 'package:source_safe_project/core/utils/service_locator.dart';
 
 class AllUserGroupsItemsListView extends StatefulWidget {
@@ -63,6 +62,7 @@ class _AllUserGroupsItemsListViewState
                       var item = e.value;
                       return GestureDetector(
                         onTap: () {
+                          groupId = item.groupId ?? 1;
                           updateIndex(index);
                         },
                         child: Row(

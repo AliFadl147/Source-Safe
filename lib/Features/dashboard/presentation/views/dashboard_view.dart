@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jwt_decoder/jwt_decoder.dart';
 import 'package:source_safe_project/Features/dashboard/presentation/views/widgets/dashboard_desktop_layout.dart';
-import 'package:source_safe_project/core/utils/app_prefs.dart';
-import 'package:source_safe_project/core/utils/functions.dart';
 import 'package:source_safe_project/core/widgets/adaptive_layout_widget.dart';
 
 class DashBoradView extends StatefulWidget {

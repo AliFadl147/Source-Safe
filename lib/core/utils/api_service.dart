@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:source_safe_project/core/utils/dio_factory.dart';
 
 class ApiService {
   static const baseUrl = 'http://127.0.0.1:5114';

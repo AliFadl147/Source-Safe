@@ -23,7 +23,6 @@ class CustomRadioListTile extends StatelessWidget {
         RadioAndValidationCubit.get(context).onChangedRadio(value, groupId);
       },
       controlAffinity: ListTileControlAffinity.trailing,
-      
     );
   }
 }

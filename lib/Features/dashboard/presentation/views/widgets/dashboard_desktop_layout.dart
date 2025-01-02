@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:source_safe_project/Features/dashboard/presentation/views/widgets/custom_drawer.dart';
-import 'package:source_safe_project/Features/dashboard/presentation/views/widgets/test/all_user_groups_and_quick_invoice_section.dart';
+import 'package:source_safe_project/Features/dashboard/presentation/views/widgets/all_user_groups_and_all_group_files_widgets/all_user_groups_and_all_group_files_section.dart';
 
 class DashboardDesktopLayout extends StatelessWidget {
   const DashboardDesktopLayout({super.key});

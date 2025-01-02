@@ -92,6 +92,11 @@ class _CustomAlertDialogState extends State<CustomAlertDialog> {
                                     id: state.usersModel.items[index].id,
                                     name: state.usersModel.items[index].name,
                                     email: state.usersModel.items[index].email,
+                                    onChanged: (bool? value) {
+                                      CheckBoxAndValidationCubit.get(context)
+                                          .onChangedCheckBox(value ?? false,
+                                              state.usersModel.items[index].id);
+                                    },
                                     checkedUsers:
                                         CheckBoxAndValidationCubit.get(context)
                                             .checkedUsers,

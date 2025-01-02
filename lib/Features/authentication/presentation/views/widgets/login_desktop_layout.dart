@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:source_safe_project/Features/authentication/presentation/views/widgets/email_and_password_fields_section.dart';
 import 'package:source_safe_project/Features/authentication/presentation/views/widgets/login_fields_and_buttons.dart';
 import 'package:source_safe_project/Features/authentication/presentation/views/widgets/title_section.dart';
 import 'package:source_safe_project/core/utils/app_images.dart';

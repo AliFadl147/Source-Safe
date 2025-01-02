@@ -3,7 +3,6 @@ import 'package:jwt_decoder/jwt_decoder.dart';
 import 'package:source_safe_project/Features/authentication/data/models/login_model.dart';
 import 'package:source_safe_project/core/utils/api_service.dart';
 import 'package:source_safe_project/core/utils/app_prefs.dart';
-import 'package:source_safe_project/core/utils/functions.dart';
 
 class TokenInterceptor extends Interceptor {
   final AppPreferences appPreferences;
