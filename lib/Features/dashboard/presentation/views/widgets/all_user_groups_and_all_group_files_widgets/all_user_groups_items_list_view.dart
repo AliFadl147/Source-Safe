@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:source_safe_project/Features/dashboard/presentation/manager/get_group_files_cubit/get_group_files_cubit.dart';
 import 'package:source_safe_project/Features/dashboard/presentation/manager/get_user_groups_cubit/get_user_groups_cubit.dart';
 import 'package:source_safe_project/Features/dashboard/presentation/views/widgets/all_user_groups_and_all_group_files_widgets/all_user_groups_item.dart';
 import 'package:source_safe_project/core/utils/app_prefs.dart';
@@ -64,6 +65,7 @@ class _AllUserGroupsItemsListViewState
                         onTap: () {
                           groupId = item.groupId ?? 1;
                           updateIndex(index);
+                          GetGroupFilesCubit.get(context).getGroupFiles(groupId: groupId);
                         },
                         child: Row(
                           children: [

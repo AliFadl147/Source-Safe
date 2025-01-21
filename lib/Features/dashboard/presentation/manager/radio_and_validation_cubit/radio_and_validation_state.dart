@@ -4,8 +4,4 @@ abstract class RadioAndValidationState {}
 
 final class RadioAndValidationStateInitial extends RadioAndValidationState {}
 
-final class FileNameIsValid extends RadioAndValidationState {}
-
-final class FileNameIsInValid extends RadioAndValidationState {}
-
 final class OnChangedRadioState extends RadioAndValidationState {}

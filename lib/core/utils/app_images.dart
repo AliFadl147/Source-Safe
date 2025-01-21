@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_single_quotes
 class Assets {
   Assets._();
-
+  
   /// Assets for imagesAccount
   /// assets/images/account.svg
   static const String imagesAccount = "assets/images/account.svg";
@@ -60,13 +60,11 @@ class Assets {
 
   /// Assets for imagesEyeIconVisibilityOff
   /// assets/images/eyeIconVisibilityOff.svg
-  static const String imagesEyeIconVisibilityOff =
-      "assets/images/eyeIconVisibilityOff.svg";
+  static const String imagesEyeIconVisibilityOff = "assets/images/eyeIconVisibilityOff.svg";
 
   /// Assets for imagesEyeIconVisibilityOn
   /// assets/images/eyeIconVisibilityOn.svg
-  static const String imagesEyeIconVisibilityOn =
-      "assets/images/eyeIconVisibilityOn.svg";
+  static const String imagesEyeIconVisibilityOn = "assets/images/eyeIconVisibilityOn.svg";
 
   /// Assets for imagesFailure
   /// assets/images/failure.svg
@@ -75,6 +73,10 @@ class Assets {
   /// Assets for imagesFirst
   /// assets/images/first.svg
   static const String imagesFirst = "assets/images/first.svg";
+
+  /// Assets for imagesFolder
+  /// assets/images/folder.svg
+  static const String imagesFolder = "assets/images/folder.svg";
 
   /// Assets for imagesHome
   /// assets/images/home.svg
@@ -95,6 +97,10 @@ class Assets {
   /// Assets for imagesLocation
   /// assets/images/location.svg
   static const String imagesLocation = "assets/images/location.svg";
+
+  /// Assets for imagesLock
+  /// assets/images/lock.svg
+  static const String imagesLock = "assets/images/lock.svg";
 
   /// Assets for imagesLockOutlined
   /// assets/images/lockOutlined.svg
@@ -132,3 +138,4 @@ class Assets {
   /// assets/images/star.svg
   static const String imagesStar = "assets/images/star.svg";
 }
+

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:source_safe_project/Features/dashboard/data/models/group_model/item.dart';
 import 'package:source_safe_project/Features/dashboard/presentation/views/widgets/all_user_groups_and_all_group_files_widgets/all_user_groups_item_header.dart';
+import 'package:source_safe_project/core/utils/app_colors.dart';
 import 'package:source_safe_project/core/utils/app_styles.dart';
+import 'package:source_safe_project/generated/l10n.dart';
 
 class InActiveAllUserGroupsItem extends StatelessWidget {
   const InActiveAllUserGroupsItem({
@@ -44,7 +46,7 @@ class InActiveAllUserGroupsItem extends StatelessWidget {
           FittedBox(
             fit: BoxFit.scaleDown,
             child: Text(
-              '${itemModel.usersCount ?? ''} Members',
+              '${itemModel.usersCount ?? ''} ${S.of(context).members}',
               style: AppStyles.styleRegular14(context),
             ),
           ),
@@ -54,7 +56,7 @@ class InActiveAllUserGroupsItem extends StatelessWidget {
           FittedBox(
             fit: BoxFit.scaleDown,
             child: Text(
-              '${itemModel.filesCount ?? ''} Files',
+              '${itemModel.filesCount ?? ''} ${S.of(context).files}',
               style: AppStyles.styleSemiBold24(context),
             ),
           ),
@@ -77,7 +79,7 @@ class ActiveAllUserGroupsItem extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
       decoration: ShapeDecoration(
-        color: const Color(0xFF4DB7F2),
+        color: AppColors.kPrimaryColor,
         shape: RoundedRectangleBorder(
           side: const BorderSide(width: 1, color: Color(0xFF4DB7F2)),
           borderRadius: BorderRadius.circular(12),
@@ -109,7 +111,7 @@ class ActiveAllUserGroupsItem extends StatelessWidget {
           FittedBox(
             fit: BoxFit.scaleDown,
             child: Text(
-              '${itemModel.usersCount ?? ''} Members',
+              '${itemModel.usersCount ?? ''} ${S.of(context).members}',
               style: AppStyles.styleRegular14(context).copyWith(
                 color: const Color(0xFFFAFAFA),
               ),
@@ -121,7 +123,7 @@ class ActiveAllUserGroupsItem extends StatelessWidget {
           FittedBox(
             fit: BoxFit.scaleDown,
             child: Text(
-              '${itemModel.filesCount ?? ''} Files',
+              '${itemModel.filesCount ?? ''} ${S.of(context).files}',
               style: AppStyles.styleSemiBold24(context)
                   .copyWith(color: Colors.white),
             ),

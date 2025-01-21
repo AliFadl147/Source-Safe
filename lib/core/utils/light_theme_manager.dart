@@ -78,6 +78,7 @@ ThemeData getApplicationTheme(BuildContext context) {
 
     // Typography
     textTheme: TextTheme(
+      displayLarge: AppStyles.styleSemiBold20(context),
       displayMedium: AppStyles.styleBold18(context),
       displaySmall: AppStyles.styleBold16(context),
       headlineMedium: AppStyles.styleSemiBold16(context),

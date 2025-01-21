@@ -31,8 +31,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "address": MessageLookupByLibrary.simpleMessage("Address"),
         "addressError": MessageLookupByLibrary.simpleMessage(
             "Address must not be empty or Less than 5 characters"),
+        "allGroupFiles":
+            MessageLookupByLibrary.simpleMessage("All Group Files"),
+        "allUserGroups":
+            MessageLookupByLibrary.simpleMessage("All User Groups"),
         "alreadyHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("already have an account!"),
+        "available": MessageLookupByLibrary.simpleMessage("Available"),
+        "checkIn": MessageLookupByLibrary.simpleMessage("Check In"),
+        "checkOut": MessageLookupByLibrary.simpleMessage("Check Out"),
         "createAGroup": MessageLookupByLibrary.simpleMessage("Create a group"),
         "createAnAccount":
             MessageLookupByLibrary.simpleMessage("create an account"),
@@ -45,6 +52,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "fileName": MessageLookupByLibrary.simpleMessage("File name"),
         "fileNameError": MessageLookupByLibrary.simpleMessage(
             "FileName must not be empty or Less than 3 characters"),
+        "files": MessageLookupByLibrary.simpleMessage("Files"),
         "firstName": MessageLookupByLibrary.simpleMessage("First name"),
         "firstNameError": MessageLookupByLibrary.simpleMessage(
             "FirstName must not be empty or Less than 3 characters"),
@@ -56,10 +64,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "lastName": MessageLookupByLibrary.simpleMessage("Last name"),
         "lastNameError": MessageLookupByLibrary.simpleMessage(
             "LastName must not be empty or Less than 3 characters"),
-        "lightingMode":
-            MessageLookupByLibrary.simpleMessage("Lighting mode      "),
+        "lightingMode": MessageLookupByLibrary.simpleMessage("Lighting mode"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "logoutAccount": MessageLookupByLibrary.simpleMessage("Logout account"),
+        "members": MessageLookupByLibrary.simpleMessage("Members"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "passwordError": MessageLookupByLibrary.simpleMessage(
             "your password must not be empty or less than 6 characters or there are no lowercase and uppercase letters or symbols"),
@@ -67,6 +75,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "phoneNumberError": MessageLookupByLibrary.simpleMessage(
             "Phone Number must not be empty or Less than 10"),
         "register": MessageLookupByLibrary.simpleMessage("Register"),
+        "reserved": MessageLookupByLibrary.simpleMessage("Reserved"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "switchLanguage":
             MessageLookupByLibrary.simpleMessage("Switch Language"),

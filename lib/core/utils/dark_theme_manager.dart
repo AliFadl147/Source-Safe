@@ -79,6 +79,9 @@ ThemeData getDarkApplicationTheme(BuildContext context) {
 
     // Typography
     textTheme: TextTheme(
+      displayLarge: AppStyles.styleSemiBold20(context).copyWith(
+        color: AppColors.white,
+      ),
       displayMedium: AppStyles.styleBold18(context).copyWith(
         color: AppColors.white,
       ),

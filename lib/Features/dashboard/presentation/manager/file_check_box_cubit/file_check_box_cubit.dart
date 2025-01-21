@@ -7,14 +7,16 @@ class FileCheckBoxCubit extends Cubit<FileCheckBoxState> {
 
   static FileCheckBoxCubit get(context) => BlocProvider.of(context);
 
-  Map<int, bool> checkedUsers = {};
+  Map<int, bool> checkedFiles = {};
 
-  onChangedCheckBox(bool value, int id) {
-    checkedUsers[id] = value;
+  onChangedCheckBox(bool value, int id, String fileName) {
+    checkedFiles[id] = value;
+    fileIdMap[fileName] = id;
     if (value && !filesSelectedindexes.contains(id)) {
       filesSelectedindexes.add(id);
     } else if (!value && filesSelectedindexes.contains(id)) {
-      checkedUsers.remove(id);
+      checkedFiles.remove(id);
+      fileIdMap.remove(fileName);
       filesSelectedindexes.remove(id);
     }
     emit(OnChangedCheckBoxState());

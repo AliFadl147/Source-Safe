@@ -71,7 +71,6 @@ class UserRepoImpl implements UserRepo {
 
   @override
   Future<Either<Failure, RegisterModel>> uploadFile({
-    required String name,
     required int groupId,
     required String userId,
     required Uint8List fileBytes,
@@ -79,7 +78,7 @@ class UserRepoImpl implements UserRepo {
   }) async {
     try {
       FormData formData = FormData.fromMap({
-        'name': name,
+        'name': fileName,
         'groupId': groupId,
         'formFile': MultipartFile.fromBytes(
           fileBytes,
@@ -87,6 +86,7 @@ class UserRepoImpl implements UserRepo {
         ),
         'userId': userId,
       });
+
       var result = await apiService.postFormData(
         endPoint: '/File/AddFile',
         data: formData,

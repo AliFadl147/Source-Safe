@@ -31,8 +31,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "address": MessageLookupByLibrary.simpleMessage("العنوان"),
         "addressError": MessageLookupByLibrary.simpleMessage(
             "يجب ألا يكون العنوان فارغًا أو أقل من 5 أحرف"),
+        "allGroupFiles":
+            MessageLookupByLibrary.simpleMessage("جميع ملفات المجموعة"),
+        "allUserGroups":
+            MessageLookupByLibrary.simpleMessage("جميع مجموعات المستخدمين"),
         "alreadyHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("لديك حساب بالفعل!"),
+        "available": MessageLookupByLibrary.simpleMessage("متاح"),
+        "checkIn": MessageLookupByLibrary.simpleMessage("إرجاع"),
+        "checkOut": MessageLookupByLibrary.simpleMessage("إخراج"),
         "createAGroup": MessageLookupByLibrary.simpleMessage("إنشاء مجموعة"),
         "createAnAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
         "createYourAccountToday": MessageLookupByLibrary.simpleMessage(
@@ -44,6 +51,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "fileName": MessageLookupByLibrary.simpleMessage("اسم الملف"),
         "fileNameError": MessageLookupByLibrary.simpleMessage(
             "يجب ألا يكون اسم الملف فارغًا أو أقل من 3 أحرف"),
+        "files": MessageLookupByLibrary.simpleMessage("ملفات"),
         "firstName": MessageLookupByLibrary.simpleMessage("الاسم الأول"),
         "firstNameError": MessageLookupByLibrary.simpleMessage(
             "يجب ألا يكون الاسم الأول فارغًا أو أقل من 3 أحرف"),
@@ -58,6 +66,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "logoutAccount":
             MessageLookupByLibrary.simpleMessage("تسجيل الخروج من الحساب"),
+        "members": MessageLookupByLibrary.simpleMessage("أعضاء"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "passwordError": MessageLookupByLibrary.simpleMessage(
             "يجب ألا تكون كلمة المرور فارغة أو أقل من 6 أحرف ويجب أن تحتوي على حروف صغيرة وكبيرة أو رموز"),
@@ -65,6 +74,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "phoneNumberError": MessageLookupByLibrary.simpleMessage(
             "يجب ألا يكون رقم الهاتف فارغًا أو أقل من 10 أرقام"),
         "register": MessageLookupByLibrary.simpleMessage("تسجيل"),
+        "reserved": MessageLookupByLibrary.simpleMessage("محجوز"),
         "search": MessageLookupByLibrary.simpleMessage("البحث"),
         "switchLanguage": MessageLookupByLibrary.simpleMessage("تبديل اللغة"),
         "switchTheme": MessageLookupByLibrary.simpleMessage("تبديل السمة")

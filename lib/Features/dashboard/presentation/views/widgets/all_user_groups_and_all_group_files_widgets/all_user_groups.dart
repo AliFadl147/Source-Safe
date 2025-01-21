@@ -8,17 +8,20 @@ class AllUserGroups extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const CustomBackgroundContainer(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          AllUserGroupsHeader(),
-          SizedBox(
-            height: 16,
-          ),
-          AllUserGroupsItemsListView(),
-        ],
+    return SizedBox(
+      width: double.infinity,
+      child: const CustomBackgroundCard(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            AllUserGroupsHeader(),
+            SizedBox(
+              height: 16,
+            ),
+            AllUserGroupsItemsListView(),
+          ],
+        ),
       ),
     );
   }

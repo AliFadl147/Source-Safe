@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:source_safe_project/core/utils/app_colors.dart';
 import 'package:source_safe_project/core/utils/app_images.dart';
 import 'package:source_safe_project/core/utils/app_styles.dart';
 
@@ -28,7 +29,7 @@ class AllUserGroupsItemHeader extends StatelessWidget {
                 child: SvgPicture.asset(
                   Assets.imagesAdmin,
                   colorFilter: ColorFilter.mode(
-                      imageColor ?? const Color(0xff4EB7F2), BlendMode.srcIn),
+                      imageColor ?? AppColors.kPrimaryColor, BlendMode.srcIn),
                 ),
               ),
             ),

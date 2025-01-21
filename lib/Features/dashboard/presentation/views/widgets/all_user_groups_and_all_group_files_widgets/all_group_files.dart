@@ -9,7 +9,7 @@ class AllGroupFiles extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const CustomBackgroundContainer(
+    return const CustomBackgroundCard(
         child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

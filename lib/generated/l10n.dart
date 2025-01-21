@@ -260,10 +260,10 @@ class S {
     );
   }
 
-  /// `Lighting mode      `
+  /// `Lighting mode`
   String get lightingMode {
     return Intl.message(
-      'Lighting mode      ',
+      'Lighting mode',
       name: 'lightingMode',
       desc: '',
       args: [],
@@ -365,6 +365,86 @@ class S {
     return Intl.message(
       'FileName must not be empty or Less than 3 characters',
       name: 'fileNameError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `All User Groups`
+  String get allUserGroups {
+    return Intl.message(
+      'All User Groups',
+      name: 'allUserGroups',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `All Group Files`
+  String get allGroupFiles {
+    return Intl.message(
+      'All Group Files',
+      name: 'allGroupFiles',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Files`
+  String get files {
+    return Intl.message(
+      'Files',
+      name: 'files',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Members`
+  String get members {
+    return Intl.message(
+      'Members',
+      name: 'members',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reserved`
+  String get reserved {
+    return Intl.message(
+      'Reserved',
+      name: 'reserved',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Available`
+  String get available {
+    return Intl.message(
+      'Available',
+      name: 'available',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Check Out`
+  String get checkOut {
+    return Intl.message(
+      'Check Out',
+      name: 'checkOut',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Check In`
+  String get checkIn {
+    return Intl.message(
+      'Check In',
+      name: 'checkIn',
       desc: '',
       args: [],
     );

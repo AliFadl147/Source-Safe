@@ -7,6 +7,8 @@ import 'package:source_safe_project/Features/dashboard/data/repos/user_repo_impl
 import 'package:source_safe_project/Features/dashboard/presentation/manager/add_group_cubit/add_group_cubit.dart';
 import 'package:source_safe_project/Features/dashboard/presentation/manager/check_box_and_validation_cubit/check_box_and_validation_cubit.dart';
 import 'package:source_safe_project/Features/dashboard/presentation/manager/add_file_cubit/add_file_cubit.dart';
+import 'package:source_safe_project/Features/dashboard/presentation/manager/check_in_cubit/check_in_cubit.dart';
+import 'package:source_safe_project/Features/dashboard/presentation/manager/check_out_cubit/check_out_cubit.dart';
 import 'package:source_safe_project/Features/dashboard/presentation/manager/file_check_box_cubit/file_check_box_cubit.dart';
 import 'package:source_safe_project/Features/dashboard/presentation/manager/get_all_users_cubit/get_all_users_cubit.dart';
 import 'package:source_safe_project/Features/dashboard/presentation/manager/get_group_files_cubit/get_group_files_cubit.dart';
@@ -83,6 +85,12 @@ class _SourceSafeState extends State<SourceSafe> {
         ),
         BlocProvider(
           create: (context) => FileCheckBoxCubit(),
+        ),
+        BlocProvider(
+          create: (context) => CheckInCubit(getIt.get<FileRepoImpl>()),
+        ),
+        BlocProvider(
+          create: (context) => CheckOutCubit(getIt.get<FileRepoImpl>()),
         ),
       ],
       child: BlocBuilder<ChangeModeCubit, ChangeModeState>(
