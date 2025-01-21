@@ -4,6 +4,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:source_safe_project/Features/dashboard/data/repos/user_repo.dart';
+import 'package:source_safe_project/Features/dashboard/presentation/manager/get_group_files_cubit/get_group_files_cubit.dart';
 import 'package:source_safe_project/core/utils/app_prefs.dart';
 import 'package:source_safe_project/core/utils/functions.dart';
 import 'package:source_safe_project/core/utils/service_locator.dart';
@@ -20,7 +21,7 @@ class AddFileCubit extends Cubit<AddFileState> {
 
   AppPreferences appPreferences = getIt.get<AppPreferences>();
 
-  Future<void> addFile(BuildContext context, String name, int groupId) async {
+  Future<void> addFile(BuildContext context, int groupId) async {
     isLoading = true;
     emit(AddFileLoadingState());
 
@@ -34,7 +35,6 @@ class AddFileCubit extends Cubit<AddFileState> {
         final userId = await appPreferences.getUserId();
         if (userId != null) {
           final response = await userRepo.uploadFile(
-            name: name,
             groupId: groupId,
             userId: userId,
             fileBytes: fileBytes,
@@ -71,6 +71,7 @@ class AddFileCubit extends Cubit<AddFileState> {
                 ),
               );
               emit(AddFileSuccessState());
+              GetGroupFilesCubit.get(context).getGroupFiles(groupId: groupId);
             },
           );
         }

@@ -13,7 +13,6 @@ abstract class UserRepo {
     required List<int> userIds,
   });
   Future<Either<Failure, RegisterModel>> uploadFile({
-    required String name,
     required int groupId,
     required String userId,
     required Uint8List fileBytes,

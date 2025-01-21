@@ -20,7 +20,7 @@
     "dashboard": "Dashboard",
     "languageChange": "Language change",
     "switchLanguage": "Switch Language",
-    "lightingMode": "Lighting mode      ",
+    "lightingMode": "Lighting mode",
     "switchTheme": "Switch Theme",
     "logoutAccount": "Logout account",
     "accessAndReserveYourTeamsFiles": "Access and reserve your team's files seamlessly and securely.",
@@ -30,5 +30,13 @@
     "groupName": "Group name",
     "groupNameError": "GroupName must not be empty or Less than 3 characters",
     "fileName": "File name",
-    "fileNameError": "FileName must not be empty or Less than 3 characters"
+    "fileNameError": "FileName must not be empty or Less than 3 characters",
+    "allUserGroups": "All User Groups",
+    "allGroupFiles": "All Group Files",
+    "files": "Files",
+    "members": "Members",
+    "reserved": "Reserved",
+    "available": "Available",
+    "checkOut": "Check Out",
+    "checkIn": "Check In"
 }

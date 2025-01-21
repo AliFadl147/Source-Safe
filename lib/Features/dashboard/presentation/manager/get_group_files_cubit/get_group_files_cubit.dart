@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:source_safe_project/Features/dashboard/data/models/file_model/file_model.dart';
 import 'package:source_safe_project/Features/dashboard/data/repos/file_repo.dart';
+import 'package:source_safe_project/core/utils/functions.dart';
 part 'get_group_files_state.dart';
 
 class GetGroupFilesCubit extends Cubit<GetGroupFilesState> {
@@ -18,6 +19,12 @@ class GetGroupFilesCubit extends Cubit<GetGroupFilesState> {
     result.fold((failure) {
       emit(GetGroupFilesFailure(failure.errMessage));
     }, (data) {
+      for (final item in data.items) {
+        if (item.isReserved == true && item.fileName != null) {
+          fileIdMap[item.fileName!] = item.fileId;
+        }
+      }
+      print(fileIdMap);
       emit(GetGroupFilesSuccess(data));
     });
   }

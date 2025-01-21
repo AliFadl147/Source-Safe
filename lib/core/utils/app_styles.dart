@@ -13,8 +13,8 @@ abstract class AppStyles {
       fontWeight: FontWeight.w400,
     );
   }
-  
-    static TextStyle styleMedium14(BuildContext context) {
+
+  static TextStyle styleMedium14(BuildContext context) {
     return TextStyle(
       color: AppColors.successGren,
       fontSize: getResponsiveFontSize(context, fontSize: 14),
@@ -25,7 +25,7 @@ abstract class AppStyles {
 
   static TextStyle styleSemiBold24(BuildContext context) {
     return TextStyle(
-      color: const Color(0xFF4EB7F2),
+      color: AppColors.kPrimaryColor,
       fontSize: getResponsiveFontSize(context, fontSize: 24),
       fontFamily: 'Montserrat',
       fontWeight: FontWeight.w600,

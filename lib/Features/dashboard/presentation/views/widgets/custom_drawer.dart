@@ -16,6 +16,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
     return SizedBox(
       width: MediaQuery.sizeOf(context).width * .7,
       child: Card(
+        elevation: 8,
         margin: EdgeInsets.zero,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.zero, // Sharp borders

@@ -5,6 +5,7 @@ import 'package:source_safe_project/core/utils/app_colors.dart';
 import 'package:source_safe_project/core/utils/size_config.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+
 final dPassValid = RegExp(r'\d');
 final sPassValid = RegExp(r'\W');
 final uPassValid = RegExp(r'[A-Z]');
@@ -112,4 +113,6 @@ void handleFileTap({
 
 final List<int> selectedindexes = [];
 final List<int> filesSelectedindexes = [];
+Map<String, int> fileIdMap = {};
 int groupId = 1;
+

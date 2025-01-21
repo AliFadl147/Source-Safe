@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:source_safe_project/core/utils/app_styles.dart';
+import 'package:source_safe_project/generated/l10n.dart';
 
 class AllGroupFilesHeader extends StatelessWidget {
   const AllGroupFilesHeader({super.key});
@@ -9,8 +9,8 @@ class AllGroupFilesHeader extends StatelessWidget {
     return Column(
       children: [
         Text(
-          'All Group Files',
-          style: AppStyles.styleSemiBold20(context),
+          S.of(context).allGroupFiles,
+          style: Theme.of(context).textTheme.displayLarge,
         ),
         SizedBox(
             height: 16,

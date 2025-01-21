@@ -15,7 +15,7 @@ class AllUserGroupsAndQuickInvoiceSection extends StatelessWidget {
         children: [
           AllUserGroups(),
           SizedBox(
-            height: 24,
+            height: 8,
           ),
           AllGroupFiles(),
         ],
