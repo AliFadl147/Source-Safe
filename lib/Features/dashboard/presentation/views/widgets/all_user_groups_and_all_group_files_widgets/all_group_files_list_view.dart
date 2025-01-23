@@ -3,10 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:source_safe_project/Features/dashboard/presentation/manager/file_check_box_cubit/file_check_box_cubit.dart';
 import 'package:source_safe_project/Features/dashboard/presentation/manager/get_group_files_cubit/get_group_files_cubit.dart';
 import 'package:source_safe_project/Features/dashboard/presentation/views/widgets/all_user_groups_and_all_group_files_widgets/custom_file_card.dart';
-import 'package:source_safe_project/core/utils/api_service.dart';
-import 'package:source_safe_project/core/utils/app_colors.dart';
 import 'package:source_safe_project/core/utils/app_prefs.dart';
-import 'package:source_safe_project/core/utils/app_styles.dart';
 import 'package:source_safe_project/core/utils/functions.dart';
 import 'package:source_safe_project/core/utils/service_locator.dart';
 

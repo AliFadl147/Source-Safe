@@ -7,7 +7,7 @@ class DashboardDesktopLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       children: [
         Expanded(child: CustomDrawer()),
         SizedBox(
@@ -36,11 +36,11 @@ class DashboardDesktopLayout extends StatelessWidget {
                         SizedBox(
                           height: 40,
                         ),
-                        SizedBox(), //MyCardsAndTransctionHistorySection(),
+                        //CustomBackgroundCard(child: MyCardsSection()),
                         SizedBox(
                           height: 24,
                         ),
-                        Expanded(child: SizedBox() /*IncomeSection()*/),
+                        //Expanded(child: SizedBox() /*IncomeSection()*/),
                       ],
                     )),
                   ],
