@@ -3,6 +3,7 @@ import 'dart:typed_data';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:source_safe_project/Features/authentication/data/models/register_model.dart';
+import 'package:source_safe_project/Features/dashboard/data/models/users_model/user_report_model/user_report_model.dart';
 import 'package:source_safe_project/Features/dashboard/data/models/users_model/users_model.dart';
 import 'package:source_safe_project/Features/dashboard/data/repos/user_repo.dart';
 import 'package:source_safe_project/core/errors/failures.dart';
@@ -99,6 +100,29 @@ class UserRepoImpl implements UserRepo {
         return left(AuthServerFailure.fromDioError(e));
       }
       return left(AuthServerFailure(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, UserReportModel>> getUserReport(
+      {required int groupId}) async {
+    try {
+      var data = await apiService.get(endPoint: '/Report/GetUserReport?GroupId=$groupId');
+
+      UserReportModel userReportModel = UserReportModel.fromJson(data);
+
+      return right(userReportModel);
+    } catch (e) {
+      if (e is DioException) {
+        return left(
+          ServerFailure.fromDioError(e),
+        );
+      }
+      return left(
+        ServerFailure(
+          e.toString(),
+        ),
+      );
     }
   }
 }

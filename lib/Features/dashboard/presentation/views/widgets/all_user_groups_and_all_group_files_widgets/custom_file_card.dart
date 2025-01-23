@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:source_safe_project/Features/dashboard/presentation/manager/file_check_box_cubit/file_check_box_cubit.dart';
-import 'package:source_safe_project/core/utils/api_service.dart';
 import 'package:source_safe_project/core/utils/app_colors.dart';
 import 'package:source_safe_project/core/utils/app_images.dart';
 import 'package:source_safe_project/core/utils/app_styles.dart';
-import 'package:source_safe_project/core/utils/functions.dart';
 import 'package:source_safe_project/generated/l10n.dart';
 
 class CustomFileCard extends StatelessWidget {

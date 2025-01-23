@@ -13,6 +13,15 @@ abstract class AppStyles {
       fontWeight: FontWeight.w400,
     );
   }
+  
+    static TextStyle styleMedium20(BuildContext context) {
+    return TextStyle(
+      color: const Color(0xFFFFFFFF),
+      fontSize: test(context, fontSize: 20),
+      fontFamily: 'Montserrat',
+      fontWeight: FontWeight.w500,
+    );
+  }
 
   static TextStyle styleMedium14(BuildContext context) {
     return TextStyle(
@@ -104,6 +113,22 @@ abstract class AppStyles {
       fontWeight: FontWeight.w700,
     );
   }
+    static TextStyle r16(context) {
+    return TextStyle(
+      color: AppColors.red,
+      fontSize: test(context, fontSize: 16),
+      fontFamily: FontConstants.fontFamily,
+      fontWeight: FontWeight.w400,
+    );
+  }
+    static TextStyle s24(BuildContext context) {
+    return TextStyle(
+      color: AppColors.kPrimaryColor,
+      fontSize: test(context, fontSize: 24),
+      fontFamily: 'Montserrat',
+      fontWeight: FontWeight.w600,
+    );
+  }
 }
 
 double getResponsiveFontSize(context, {required double fontSize}) {
@@ -143,19 +168,31 @@ double getScaleFactor(context) {
   }
 }
 
-// double getResponsiveFontSize(context, {required double fontSize}) {
-//   double scaleFactor = getScaleFactor(context);
-//   double responsiveFontSize = fontSize * scaleFactor;
-//   double lowerLimit = fontSize * .8;
-//   double upperLimit = fontSize * 1.2;
-//   if (scaleFactor >= SizeConfig.tablet / 550) {
-//     lowerLimit = fontSize * 1.2;
-//     upperLimit = fontSize * 1.6;
-//   }
-//   return responsiveFontSize.clamp(lowerLimit, upperLimit);
-// }
 
-// double getScaleFactor(context) {
-//   double width = MediaQuery.sizeOf(context).width;
-//   return width / 550;
-// }
+double test(context, {required double fontSize}) {
+  double scaleFactor = testScale(context);
+  double responsiveFontSize = fontSize * scaleFactor;
+
+  double lowerLimit = fontSize * .8;
+  double upperLimit = fontSize * 1.2;
+
+  return responsiveFontSize.clamp(lowerLimit, upperLimit);
+}
+
+double testScale(context) {
+  // var dispatcher = PlatformDispatcher.instance;
+  // var physicalWidth = dispatcher.views.first.physicalSize.width;
+  // var devicePixelRatio = dispatcher.views.first.devicePixelRatio;
+  // double width = physicalWidth / devicePixelRatio;
+
+  double width = MediaQuery.sizeOf(context).width;
+  if (width < SizeConfig.tablet) {
+    return width / 550;
+  } else if (width < SizeConfig.desktop) {
+    return width / 1000;
+  } else {
+    return width / 1920;
+  }
+
+  
+}

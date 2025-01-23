@@ -1,6 +1,7 @@
 import 'dart:typed_data';
 import 'package:dartz/dartz.dart';
 import 'package:source_safe_project/Features/authentication/data/models/register_model.dart';
+import 'package:source_safe_project/Features/dashboard/data/models/users_model/user_report_model/user_report_model.dart';
 import 'package:source_safe_project/Features/dashboard/data/models/users_model/users_model.dart';
 import 'package:source_safe_project/core/errors/failures.dart';
 
@@ -18,4 +19,6 @@ abstract class UserRepo {
     required Uint8List fileBytes,
     required String fileName,
   });
+  Future<Either<Failure, UserReportModel>> getUserReport(
+      {required int groupId,});
 }

@@ -13,6 +13,7 @@ import 'package:source_safe_project/Features/dashboard/presentation/manager/file
 import 'package:source_safe_project/Features/dashboard/presentation/manager/get_all_users_cubit/get_all_users_cubit.dart';
 import 'package:source_safe_project/Features/dashboard/presentation/manager/get_group_files_cubit/get_group_files_cubit.dart';
 import 'package:source_safe_project/Features/dashboard/presentation/manager/get_user_groups_cubit/get_user_groups_cubit.dart';
+import 'package:source_safe_project/Features/dashboard/presentation/manager/get_user_report_cubit/get_user_report_cubit.dart';
 import 'package:source_safe_project/Features/dashboard/presentation/manager/radio_and_validation_cubit/radio_and_validation_cubit.dart';
 import 'package:source_safe_project/core/manager/change_lang_cubit/change_lang_cubit.dart';
 import 'package:source_safe_project/core/manager/change_mode_cubit/change_mode_cubit.dart';
@@ -91,6 +92,9 @@ class _SourceSafeState extends State<SourceSafe> {
         ),
         BlocProvider(
           create: (context) => CheckOutCubit(getIt.get<FileRepoImpl>()),
+        ),
+        BlocProvider(
+          create: (context) => GetUserReportCubit(getIt.get<UserRepoImpl>()),
         ),
       ],
       child: BlocBuilder<ChangeModeCubit, ChangeModeState>(
